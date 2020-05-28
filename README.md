@@ -9,4 +9,10 @@
 - [**Android小组会议(2020-05-28)**](http://192.168.11.214:8087/android-team/androidteamtogether/blob/master/%E6%AF%8F%E5%91%A8%E5%B8%B8%E8%A7%84%E4%BC%9A%E8%AE%AE/Android%E5%B0%8F%E7%BB%84%E4%BC%9A%E8%AE%AE(2020-05-28).md)
 
 
+技术点汇总：
 
+- [点点我](http://192.168.11.214:8087/android-team/androidteamtogether/blob/master/%E6%8A%80%E6%9C%AF%E6%B1%87%E6%80%BB/Android%20%E6%8A%80%E6%9C%AF%E7%82%B9%E6%94%B6%E9%9B%86.md)
+
+建设提议：
+
+- [看看我](http://192.168.11.214:8087/android-team/androidteamtogether/tree/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE)
