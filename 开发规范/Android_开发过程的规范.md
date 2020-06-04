@@ -41,7 +41,7 @@
 - 提交产品
    - 提交该迭代版本的时间线
 
-  ![](/Users/lm9/Desktop/任务拆分.jpg)
+  ![Image text](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/%E4%BB%BB%E5%8A%A1%E6%8B%86%E5%88%86.jpg)
   
 案例：
   [需求拆分](https://docs.google.com/spreadsheets/d/1bVdX6hQyi1KhssHXxlvZHVxLYeygA5Ra4AKbaixJqlI/edit#gid=1534735767)
@@ -55,6 +55,7 @@
 - 后端提供接口文档
   - [接口文档](http://192.168.11.217:3000/project/32/interface/api/2532)
   - 接口路径、请求参数、返回数据等
+  - 开发完的接口可实时的跟客户端同步
   
 #### **5.方案变更流程**
 
