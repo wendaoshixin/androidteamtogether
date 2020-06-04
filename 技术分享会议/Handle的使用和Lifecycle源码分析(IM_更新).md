@@ -1,5 +1,4 @@
 
-
 **目录**
 
 [TOC]
@@ -145,6 +144,10 @@ safetyHandler.sendMessage()
 #### **1. FragmentActivity的Liecycle**:
 
 ```java
+public class FragmentActivity extends ComponentActivity implements
+        ActivityCompat.OnRequestPermissionsResultCallback,
+        ActivityCompat.RequestPermissionsRequestCodeValidator {
+        
    /**
      * Returns the Lifecycle of the provider.
      *
@@ -154,6 +157,7 @@ safetyHandler.sendMessage()
     public Lifecycle getLifecycle() {
         return super.getLifecycle();
     }
+}
 ```
 从上可以知道，FragmentActivity中的`getLifecycle()`会调用父类中的`getLifecycle()`从而获得Lifecycle对象。
 
