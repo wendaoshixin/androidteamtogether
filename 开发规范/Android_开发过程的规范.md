@@ -26,7 +26,7 @@
 - 搭建项目框架
    - 组件化开发、模块化开发
 
-![项目立项](/Users/lm9/Desktop/项目立项.jpg)
+![Image text](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B.jpg)
 
 案例：[技术选型](http://192.168.10.254/!/#im/view/head/android/%E9%9B%B7%E8%AE%AF%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B(android).pdf)
 
