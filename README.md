@@ -16,3 +16,8 @@
 建设提议：
 
 - [看看我](http://192.168.11.214:8087/android-team/androidteamtogether/blob/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/Android%E5%B9%B3%E5%8F%B0%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE.md)
+
+
+GitLab的使用事项：
+
+- [如何为md文档插入gitlab仓库图片](https://www.mybj123.com/5068.html)
