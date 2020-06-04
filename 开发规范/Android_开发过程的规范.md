@@ -11,7 +11,7 @@
   - 提测：打包转测试
   - 产品验收：产品通过则上线
 
-![项目开发总体流程图](/Users/lm9/Desktop/未命名文件.jpg)
+![Image text](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/%E5%BC%80%E5%8F%91%E6%B5%81%E7%A8%8B.jpg)
 
 
 
