@@ -17,7 +17,6 @@
    /**
     * desc   : xxxx 描述
     * author : Blankj
-    * e-mail : xxx@xx
     * date   : 2020/06/03
     * version: 1.0
     * 版权所有:雷漫网络科技
@@ -34,7 +33,6 @@
    /**
     * desc   :
     * author : ${USER}
-    * e-mail : xxx@xx
     * date   : ${YEAR}/${MONTH}/${DAY}
     * version: 1.0
     * 版权所有:雷漫网络科技
