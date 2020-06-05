@@ -2,19 +2,26 @@
 
 **1.layout 文件的命名方式【推荐】**
 
-   Activity 的 layout 以 activity_ 开头
+  
+*   Activity 的 layout 以 activity_ 开头
 
-   Fragment 的 layout 以 fragment_ 开头
+  
+*   Fragment 的 layout 以 fragment_ 开头
 
-   Dialog 的 layout 以 dialog_ 开头
+  
+*   Dialog 的 layout 以 dialog_ 开头
 
-   include 的 layout 以 include_ 开头
+  
+*   include 的 layout 以 include_ 开头
 
-   ListView 的行 layout 以 list_item_ 开头
+  
+*   ListView 的行 layout 以 list_item_ 开头
 
-   RecyclerView 的 item layout 以 recycle_item_ 开头
+   
+*  RecyclerView 的 item layout 以 recycle_item_ 开头
 
-   GridView 的 item layout 以 grid_item_ 开头
+   
+*  GridView 的 item layout 以 grid_item_ 开头
 
    
 
