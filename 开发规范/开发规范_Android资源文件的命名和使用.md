@@ -92,7 +92,7 @@
 *   如下所示：
     
        ```java
-       <color name="dialog_progress_bg_color">#5F000000</color>
+       <color name="dialog_progress_bg_black_color">#5F000000</color>
        ```
 
    
