@@ -1,21 +1,13 @@
-# 规范说明
+# 规约
 
-- 【强制】必须遵守，违反本约定或将会引起严重的后果；
-- 【推荐】尽量遵守，长期遵守有助于系统稳定性和合作效率的提升；
-- 【参考】充分理解，技术意识的引导，是个人学习、团队沟通、项目合作的方向。
+- 为了减少他人阅读你代码的痛苦值，请在关键地方做好注释。
+- 注释必须简洁，描述逻辑清晰，杜绝长篇大论
+- 注释量不少于代码总量的三分之一
+- 除变量定义等较短语句的注释可用行尾注释外，其他注释应当避免使用行尾注释
 
 
 
 # 注释规范
-
-##### 【规约】
-
-- 为了减少他人阅读你代码的痛苦值，请在关键地方做好注释。
-- 注释功能说明尽量精简，描述逻辑清晰，杜绝长篇大论
-- 注释量不少于代码总量的三分之一
-- 在写注释内容前建议都加一个空格
-
-
 
 1. #### 类注释【强制】
 
@@ -23,33 +15,31 @@
 
    ```java
    /**
-    * <pre>
-    *     author : Blankj
-    *     e-mail : xxx@xx
-    *     time   : 2020/06/03
-    *     desc   : xxxx 描述
-    *     version: 1.0
-    * </pre>
+    * desc   : xxxx 描述
+    * author : Blankj
+    * e-mail : xxx@xx
+    * date   : 2020/06/03
+    * version: 1.0
+    * 版权所有:雷漫网络科技
     */
    public class WelcomeActivity {
        ...
    }
    ```
-
-   具体可以在 AS 中自己配制，进入 Settings -> Editor -> File and Code Templates -> Includes -> File Header，输入以下文本即可
-
-   ```java
+   
+具体可以在 AS 中自己配制，进入 Settings -> Editor -> File and Code Templates -> Includes -> File Header，输入以下文本即可
+   
+```java
    /**
-    * <pre>
-    *     author : ${USER}
-    *     e-mail : xxx@xx
-    *     time   : ${YEAR}/${MONTH}/${DAY}
-    *     desc   :
-    *     version: 1.0
-    * </pre>
+    * desc   :
+    * author : ${USER}
+    * e-mail : xxx@xx
+    * date   : ${YEAR}/${MONTH}/${DAY}
+    * version: 1.0
+    * 版权所有:雷漫网络科技
     */
    ```
-
+   
    
 
 2. #### 方法注释【强制】
@@ -77,7 +67,7 @@
     * @param format 格式
     * @return 字节数组
     */
-   public static byte[] bitmap2Bytes(Bitmap bitmap, CompressFormat format) {
+   public static byte[] bitmap2Bytes(@NotNull Bitmap bitmap, @NotNull CompressFormat format) {
        if (bitmap == null) return null;
        ByteArrayOutputStream baos = new ByteArrayOutputStream();
        bitmap.compress(format, 100, baos);
@@ -119,22 +109,15 @@
 
    
 
-4. #### XML注释【参考】
-
-   a.如果当前layout 或资源需要被多处调用，或公共使用的layout（如：list_item），则需要在xml写明注释。注释清晰易懂。
-
-   b.引用的第三方库尽量注释其作用，github或博客地址。
-
-   
-
 5. #### 其他注释【参考】
 
-   AS 已帮你集成了一些注释模板，我们只需要直接使用即可，在代码中输入 `todo`、`fixme` 等这些注释模板，回车后便会出现如下注释。
+   a. AS 已帮你集成了一些注释模板，我们只需要直接使用即可，在代码中输入 `todo`、`fixme` 等这些注释模板，回车后便会出现如下注释。
 
    ```java
    // TODO: 17/3/14 需要实现，但目前还未实现的功能的说明
    // FIXME: 17/3/14 需要修正，甚至代码是错误的，不能工作，需要修复的说明
    ```
 
-##### 
+​       b. 如果当前layout 或资源需要被多处调用，或公共使用的layout（如：list_item），则需要在xml写明注释
 
+​       c. 引用的第三方库尽量注释其作用，github或博客地址。
