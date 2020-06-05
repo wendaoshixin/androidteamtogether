@@ -75,6 +75,7 @@
 
    
 *  Tip：tween 动画资源:尽可能以通用的动画名称命名，如 dialog_fade_in ,dialog_fade_out (动画+方向);
+
         frame 动画资源:尽可能以模 块+功能命名+序号。如:module_loading_grey_001
 
    
