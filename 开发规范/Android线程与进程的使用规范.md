@@ -1,8 +1,3 @@
-# 规范说明
-
-- 【强制】必须遵守，违反本约定或将会引起严重的后果；
-- 【推荐】尽量遵守，长期遵守有助于系统稳定性和合作效率的提升；
-- 【参考】充分理解，技术意识的引导，是个人学习、团队沟通、项目合作的方向。
 
 # 线程与进程使用
 
@@ -12,7 +7,7 @@
 * HandleThread和Handler
 * ThreadPoolExecutor
 * AsyncTask
-* View.post(Runable)与runOnUiThread
+* Activity.runOnUiThread
 
 ## 进程通信方式
 
@@ -89,7 +84,7 @@ public class MyApplication extends Application {
 
 
 
-**3、【强制】线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险。 说明： Executors 返回的线程池对象的弊端如下：**
+**3、【推荐】线程池不允许使用 Executors 去创建，而是通过 ThreadPoolExecutor 的方式，这样的处理方式让写的同学更加明确线程池的运行规则，规避资源耗尽的风险。 说明： Executors 返回的线程池对象的弊端如下：**
 
 1. FixedThreadPool 和 SingleThreadPool ： 允许的请求队列长度为Integer.MAX_VALUE，可能会堆积大量的请求，从而导致 OOM；
 2. CachedThreadPool 和 ScheduledThreadPool ： 允许的创建线程数量为Integer.MAX_VALUE，可能会创建大量的线程，从而导致 OOM。
