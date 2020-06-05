@@ -76,6 +76,8 @@
    }
    ```
 
+   kotlin自动补全注释，需要插件。Preferences  >  Plugins > Browse repositories >输入 BugKotlinDocument
+
    方法注释中不允许出现@params, @return的参数描述错误的情况, 必须实时更新。【强制】
 
    一段逻辑建议使用//的方式【推荐】
