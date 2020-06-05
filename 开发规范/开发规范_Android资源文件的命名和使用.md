@@ -83,17 +83,17 @@
 
    
 *  规则:
-
-   ```java
-   模块名_逻辑名称_颜色
-   ```
+    
+       ```java
+       模块名_逻辑名称_颜色
+       ```
 
   
 *   如下所示：
-
-   ```java
-   <color name="dialog_progress_bg_color">#5F000000</color>
-   ```
+    
+       ```java
+       <color name="dialog_progress_bg_color">#5F000000</color>
+       ```
 
    
 
