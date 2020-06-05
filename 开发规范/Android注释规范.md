@@ -27,8 +27,9 @@
    }
    ```
    
+
 具体可以在 AS 中自己配制，进入 Settings -> Editor -> File and Code Templates -> Includes -> File Header，输入以下文本即可
-   
+
 ```java
    /**
     * desc   :
@@ -38,8 +39,8 @@
     * version: 1.0
     * 版权所有:雷漫网络科技
     */
-   ```
-   
+```
+
    
 
 2. #### 方法注释【强制】
@@ -100,8 +101,6 @@
     * Or you can
     * even do this. */
    ```
-
-   Tip：
 
    变量注释不允许使用与类/方法一致的注释形式。
 
