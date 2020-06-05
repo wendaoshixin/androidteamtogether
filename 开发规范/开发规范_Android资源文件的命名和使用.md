@@ -1,6 +1,6 @@
 # Android 资源文件命名与使用
 
-1.layout 文件的命名方式【推荐】
+**1.layout 文件的命名方式【推荐】**
 
    Activity 的 layout 以 activity_ 开头
 
