@@ -60,7 +60,7 @@
    ```
 
    
-*  Tip：根据分辨率不同存放 在不同的 mipmap 目录下，例如 mipmap-xxhdpi。
+*  Tip：普通图片资源根据分辨率不同存放 在不同的 drawable 目录下，例如 drawable-xxhdpi。
 
    
 
