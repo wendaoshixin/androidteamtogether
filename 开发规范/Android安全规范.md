@@ -143,12 +143,13 @@ Android5.0 以后安全性要求较高的应用应该使用 window.setFlag(Layou
 
 ##### 15.【规范要求】【推荐】
 在使用 WebView 控件时，应显示关闭控件自带的记住密码功能。即：设置 WebView.getSettings().setSavePassword(false);
-【详情说明】
+##### 【详情说明】
 Google 在设计 WebView 的时候提供默认自带记住密码的功能，即程序在不设置 theWebView.getSettings().setSavePassword(false);的时候 WebView 在使用密码控件后会自动弹出界面提示用户是否记住密码，如果用户选择“记住”选择项后密码会明文储存在/data/data/com.package.name/databases/webview.db 中，如果设备中出现了 Root 提权的其他应用的时候该应用则可直接读取所有应用通过 webView 储存的密码。所以在使用 Webview 时应显示关闭 Webview 的自动保存密码功能，防止用户密码被 Webview 明文存储在设备中。
 ##### 16.【规范要求】【推荐】
 避免 webview 通过 file:schema 方式访问本地敏感数据。
 ##### 17.【规范要求】【推荐】
-正式发布的应用应关闭数据备份功能。应在 AndroidManifest.xml 的 Application 参数设置中将 android:allowBackup 参数显示设置为“false”，关闭非 root 情况下允许对应用数据的备份与恢复功能。【详情说明】
+正式发布的应用应关闭数据备份功能。应在 AndroidManifest.xml 的 Application 参数设置中将 android:allowBackup 参数显示设置为“false”，关闭非 root 情况下允许对应用数据的备份与恢复功能。
+##### 【详情说明】
 当在 AndroidManifest.xml 中 application 配置参数 allowBackup 被设置为 true 或不设置该标志时，应用程序数据可以再非 root 状态下进行数据的备份和恢复，攻击者可以通过 adb 调试指令直接复制应用程序数据。造成应用数据泄露风险。
 
 
