@@ -1,13 +1,13 @@
 # Android 安全规范
 
-1.【规范要求】【推荐】
+#####1.【规范要求】【推荐】
 针对不需要进行跨应用调用的组件，应在配置文件（AndroidManifest.xml）中显示配置 android:exported=”false”属性。
 【详细说明】
 组件配置 android:exported=”false”属性，表明它为私有组件，只可在同一个应用程序组件间或带有相同用户 ID 的应用程序间才能启动或绑定该服务。在非必要情况下，如果该属性设置为“true”，则该组件可以被任意应用执行启动操作，造成组件恶意调用等风险。
 
-2.【规范要求】【推荐】
+#####2.【规范要求】【推荐】
 因特殊需要而公开的 Activity、Service、Broadcast Receiver、Content Provider 组件建议添加自定义 permission 权限进行访问控制。
-【详情说明】
+#####【详情说明】
 因特殊需要而公开（exported=”true”）的对于需要公开的 Activity、Service、Broadcast Receiver、Content Provider 组件采用自定义访问权限的方法提供访问控制波保护。通过自定义访问权限保护后公开的组件只能被申请了该权限的外部应用（Application）调用，未申请权限的外部应用（Application）在调用时将会出现“java.lang.SecurityException: Not allowed to bind to service Intent”异常，造成调用失败。
 程序中的启动/使用 Activity、Service、Broadcast Receiver、Content Provider 则由程序定位与需求来确认是否添加自定义访问权限，启动的 Activity、Service、Broadcast Receiver、Content Provider 本身是需要被其他程序进行调用的，如果没有特殊需求（该程序只允许指定 APP 启动）的话就不能添加该权限。
 
