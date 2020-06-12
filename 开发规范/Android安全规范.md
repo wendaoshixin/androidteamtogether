@@ -1,4 +1,5 @@
 # Android 安全规范
+
 #####1.【规范要求】【推荐】
 针对不需要进行跨应用调用的组件，应在配置文件（AndroidManifest.xml）中显示配置 android:exported=”false”属性。
 #####【详细说明】
