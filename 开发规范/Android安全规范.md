@@ -4,10 +4,10 @@
 
 针对不需要进行跨应用调用的组件，应在配置文件（AndroidManifest.xml）中显示配置 android:exported=”false”属性。
 ##### 【详细说明】
-组件配置 android:exported=”false”属性，表明它为私有组件，只可在同一个应用程序组件间或带有相同用户 ID 的应用程序间才能启动或绑定该服务。在非必要情况下，如果该属性设置为“true”，则该组件可以被任意应用执行启动操作，造成组件恶意调用等风险。
+组件配置 android:exported=”false”属性，表明它为私有组件，只可在同一个应用程序组件间或带有相同用户 ID 的应用程序间才能启动或绑定该服务
 
 ##### 2.【规范要求】【推荐】
-因特殊需要而公开的 Activity、Service、Broadcast Receiver、Content Provider 组件建议添加自定义 permission 权限进行访问控制。
+公开的组件建议添加自定义 permission 权限进行访问控制。
 
 ##### 3.【规范要求】【推荐】
 应避免使用隐式调用 Intent ，为了数据安全与性能消耗须使用显式调用尽量减少使用隐式调用。
@@ -54,7 +54,7 @@ AccountManager.get(this).addAccount(accountType,
 ```
 
 反例 2：
-mPendingIntent 是通过 new Intent()构造原始 Intent 的，所以为“双无”Intent，这个PendingIntent最终被通过AccountManager.addAccount 方法传递给了恶意APP接口。
+
 
 ```java
 Intent intent = new Intent("com.test.test.pushservice.action.METHOD");
@@ -67,8 +67,7 @@ PendingIntent.getBroadcast(this, 0, intent, 0));
 
 ##### 7.【规范要求】【推荐】
 在实现的 HostnameVerifier 子类中，需要使用 verify 函数效验服务器主机名的合法性，否则会导致恶意程序利用中间人攻击绕过主机名效验。
-##### 【详情说明】
-在握手期间，如果 URL 的主机名和服务器的标识主机名不匹配，则验证机制可以回调此接口的实现程序来确定是否应该允许此连接。如果回调内实现不恰当，默认接受所有域名，则有安全风险。
+
 反例：
 
 ```java
@@ -143,8 +142,7 @@ Android5.0 以后安全性要求较高的应用应该使用 window.setFlag(Layou
 
 ##### 16.【规范要求】【推荐】
 在使用 WebView 控件时，应显示关闭控件自带的记住密码功能。即：设置 WebView.getSettings().setSavePassword(false);
-##### 【详情说明】
-Google 在设计 WebView 的时候提供默认自带记住密码的功能，即程序在不设置 theWebView.getSettings().setSavePassword(false);的时候 WebView 在使用密码控件后会自动弹出界面提示用户是否记住密码，如果用户选择“记住”选择项后密码会明文储存在/data/data/com.package.name/databases/webview.db 中，如果设备中出现了 Root 提权的其他应用的时候该应用则可直接读取所有应用通过 webView 储存的密码。所以在使用 Webview 时应显示关闭 Webview 的自动保存密码功能，防止用户密码被 Webview 明文存储在设备中。
+
 ##### 17.【规范要求】【推荐】
 避免 webview 通过 file:schema 方式访问本地敏感数据。
 ##### 18.【规范要求】【推荐】
