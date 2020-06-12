@@ -33,7 +33,7 @@ Canvas 对应的相关 API 肯定也是支持灰度的。
 首先我们来编写个自定义的 ImageView ,取名: GrayImageView
 
 布局文件 与 原始对比图：
-![布局文件](/Users/lm9/Desktop/布局文件.png)
+![Image text](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB%E4%BC%9A%E8%AE%AE/picture/%E5%B8%83%E5%B1%80%E6%96%87%E4%BB%B6.png)
 
 GrayImageView 的代码 与 编译对比图：
 
