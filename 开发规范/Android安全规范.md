@@ -8,7 +8,7 @@
 
 ##### 2.【规范要求】【推荐】
 因特殊需要而公开的 Activity、Service、Broadcast Receiver、Content Provider 组件建议添加自定义 permission 权限进行访问控制。
-#####【详情说明】
+##### 【详情说明】
 因特殊需要而公开（exported=”true”）的对于需要公开的 Activity、Service、Broadcast Receiver、Content Provider 组件采用自定义访问权限的方法提供访问控制波保护。通过自定义访问权限保护后公开的组件只能被申请了该权限的外部应用（Application）调用，未申请权限的外部应用（Application）在调用时将会出现“java.lang.SecurityException: Not allowed to bind to service Intent”异常，造成调用失败。
 程序中的启动/使用 Activity、Service、Broadcast Receiver、Content Provider 则由程序定位与需求来确认是否添加自定义访问权限，启动的 Activity、Service、Broadcast Receiver、Content Provider 本身是需要被其他程序进行调用的，如果没有特殊需求（该程序只允许指定 APP 启动）的话就不能添加该权限。
 
@@ -101,7 +101,7 @@ HostnameVerifier hnv = new HostnameVerifier() {
 
 ##### 7.【规范要求】【推荐】
 利用 X509TrustManager 子类中的 checkServerTrusted 函数效验服务器端证书的合法性。
-#####【详情说明】
+##### 【详情说明】
 在实现的 X509TrustManager 子类中未对服务端的证书做检验，这样会导致不被信任的证书绕过证书效验机制。
 反例：
 ```java
@@ -127,7 +127,7 @@ sslContext.init(null, new TrustManager[] { tm }, null);
 
 ##### 10.【规范要求】【推荐】
 避免将数据储存到 sdcard 中，尽量使用 sqlite、sharedpreferences 或系统私有目录的 file 文件进行数据储存。
-【详情说明】
+##### 【详情说明】
 使用外部存储实现数据持久化，这里的外部存储一般就是指的是 sdcard。使用 sdcard 存储的数据，不限制只有本应用访问，任何可以有访问 Sdcard 权限的应用均可以访问，容易导致信息泄漏安全风险。
 
 ##### 11.【规范要求】【推荐】
