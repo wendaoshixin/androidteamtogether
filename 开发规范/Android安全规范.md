@@ -15,23 +15,10 @@
 ##### 3.【规范要求】【推荐】
 应避免使用隐式调用 Intent ，包括 Activity、Content provider、Broadcast receiver、Service 等，为了数据安全与性能消耗须使用显式调用尽量减少使用隐式调用。
 
-
-##### 4.【规范要求】【推荐】
-正式发布的应用应关闭数据备份功能。应在 AndroidManifest.xml 的 Application 参数设置中将 android:allowBackup 参数显示设置为“false”，关闭非 root 情况下允许对应用数据的备份与恢复功能。【详情说明】
-当在 AndroidManifest.xml 中 application 配置参数 allowBackup 被设置为 true 或不设置该标志时，应用程序数据可以再非 root 状态下进行数据的备份和恢复，攻击者可以通过 adb 调试指令直接复制应用程序数据。造成应用数据泄露风险。
-
+##### 4.【规范要求】【强制】
+开放的 activity/service/receiver 等需要对传入的 intent 做合法性校验。
 
 ##### 5.【规范要求】【推荐】
-避免将数据储存到 sdcard 中，尽量使用 sqlite、sharedpreferences 或系统私有目录的 file 文件进行数据储存。
-【详情说明】
-使用外部存储实现数据持久化，这里的外部存储一般就是指的是 sdcard。使用 sdcard 存储的数据，不限制只有本应用访问，任何可以有访问 Sdcard 权限的应用均可以访问，容易导致信息泄漏安全风险。
-
-##### 6.【规范要求】【推荐】
-在使用 WebView 控件时，应显示关闭控件自带的记住密码功能。即：设置 WebView.getSettings().setSavePassword(false);
-【详情说明】
-Google 在设计 WebView 的时候提供默认自带记住密码的功能，即程序在不设置 theWebView.getSettings().setSavePassword(false);的时候 WebView 在使用密码控件后会自动弹出界面提示用户是否记住密码，如果用户选择“记住”选择项后密码会明文储存在/data/data/com.package.name/databases/webview.db 中，如果设备中出现了 Root 提权的其他应用的时候该应用则可直接读取所有应用通过 webView 储存的密码。所以在使用 Webview 时应显示关闭 Webview 的自动保存密码功能，防止用户密码被 Webview 明文存储在设备中。
-
-##### 7.【规范要求】【推荐】
 使用 PendingIntent 时，禁止使用空 intent，同时禁止使用隐式 Intent
 ##### 【详情说明】
 
@@ -78,7 +65,7 @@ PendingIntent.getBroadcast(this, 0, intent, 0));
 
 如上代码PendingIntent.getBroadcast，PendingItent中包含的Intent为隐式intent，因此当 PendingIntent 触发执行时，发送的 intent 很可能被嗅探或者劫持，导致 intent 内容泄漏。
 
-##### 8.【规范要求】【推荐】
+##### 6.【规范要求】【推荐】
 在实现的 HostnameVerifier 子类中，需要使用 verify 函数效验服务器主机名的合法性，否则会导致恶意程序利用中间人攻击绕过主机名效验。
 ##### 【详情说明】
 在握手期间，如果 URL 的主机名和服务器的标识主机名不匹配，则验证机制可以回调此接口的实现程序来确定是否应该允许此连接。如果回调内实现不恰当，默认接受所有域名，则有安全风险。
@@ -112,7 +99,7 @@ HostnameVerifier hnv = new HostnameVerifier() {
 };
 ```
 
-#####9.【规范要求】【推荐】
+##### 7.【规范要求】【推荐】
 利用 X509TrustManager 子类中的 checkServerTrusted 函数效验服务器端证书的合法性。
 #####【详情说明】
 在实现的 X509TrustManager 子类中未对服务端的证书做检验，这样会导致不被信任的证书绕过证书效验机制。
@@ -132,25 +119,38 @@ TrustManager tm = new X509TrustManager() {
 };
 sslContext.init(null, new TrustManager[] { tm }, null);
 ```
+##### 8.【规范要求】【强制】
+密钥切勿硬编码到代码中。
+
+##### 9.【规范要求】【推荐】
+加密算法：使用不安全的 Hash 算法(MD5/SHA-1)加密信息，存在被破解的风险，建议使用 SHA-256 等安全性更高的 Hash 算法。
+
 ##### 10.【规范要求】【推荐】
-数据存储在 Sqlite 或者轻量级存储需要对数据进行加密，取出来的时候进行解密。
+避免将数据储存到 sdcard 中，尽量使用 sqlite、sharedpreferences 或系统私有目录的 file 文件进行数据储存。
+【详情说明】
+使用外部存储实现数据持久化，这里的外部存储一般就是指的是 sdcard。使用 sdcard 存储的数据，不限制只有本应用访问，任何可以有访问 Sdcard 权限的应用均可以访问，容易导致信息泄漏安全风险。
+
 ##### 11.【规范要求】【推荐】
-避免 webview 通过 file:schema 方式访问本地敏感数据。
+数据存储在 Sqlite 或者轻量级存储需要对数据进行加密，取出来的时候进行解密。
 
-##### 12.【规范要求】【强制】
-不要把敏感信息打印到 log 中。
-
+##### 12.【规范要求】【推荐】
+使用安全的 SQL 语句查询方式，避免出现命令拼接的形式
 ##### 13.【规范要求】【强制】
-密钥加密存储或者经过变形处理后用于加解密运算，切勿硬编码到代码中。
+不要把敏感信息打印到 log 中。
 
 ##### 14.【规范要求】【推荐】
 Android5.0 以后安全性要求较高的应用应该使用 window.setFlag(LayoutParam.FLAG_SECURE) 禁止录屏。
 
-##### 15.【规范要求】【强制】
-开放的 activity/service/receiver 等需要对传入的 intent 做合法性校验。
+##### 15.【规范要求】【推荐】
+在使用 WebView 控件时，应显示关闭控件自带的记住密码功能。即：设置 WebView.getSettings().setSavePassword(false);
+【详情说明】
+Google 在设计 WebView 的时候提供默认自带记住密码的功能，即程序在不设置 theWebView.getSettings().setSavePassword(false);的时候 WebView 在使用密码控件后会自动弹出界面提示用户是否记住密码，如果用户选择“记住”选择项后密码会明文储存在/data/data/com.package.name/databases/webview.db 中，如果设备中出现了 Root 提权的其他应用的时候该应用则可直接读取所有应用通过 webView 储存的密码。所以在使用 Webview 时应显示关闭 Webview 的自动保存密码功能，防止用户密码被 Webview 明文存储在设备中。
 ##### 16.【规范要求】【推荐】
-加密算法：使用不安全的 Hash 算法(MD5/SHA-1)加密信息，存在被破解的风险，建议使用 SHA-256 等安全性更高的 Hash 算法。
+避免 webview 通过 file:schema 方式访问本地敏感数据。
 ##### 17.【规范要求】【推荐】
-使用安全的 SQL 语句查询方式，避免出现命令拼接的形式
+正式发布的应用应关闭数据备份功能。应在 AndroidManifest.xml 的 Application 参数设置中将 android:allowBackup 参数显示设置为“false”，关闭非 root 情况下允许对应用数据的备份与恢复功能。【详情说明】
+当在 AndroidManifest.xml 中 application 配置参数 allowBackup 被设置为 true 或不设置该标志时，应用程序数据可以再非 root 状态下进行数据的备份和恢复，攻击者可以通过 adb 调试指令直接复制应用程序数据。造成应用数据泄露风险。
+
+
 
 
