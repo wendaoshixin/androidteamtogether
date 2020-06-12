@@ -24,6 +24,7 @@ ContentProvider对外部输入的数据做合法性校验
 
 使用 PendingIntent 时，使用了空 Intent,会导致恶意用户劫持修改 Intent 的内容。禁止使用一个空 Intent 去构造 PendingIntent，构造 PendingIntent 的 Intent一定要设置 ComponentName 或者 action。
 PendingIntent 可以让其他 APP 中的代码像是运行自己 APP 中。PendingIntent的intent接收方在使用该intent时与发送方有相同的权限。在使用PendingIntent时，PendingIntent 中包装的 intent 如果是隐式的 Intent，容易遭到劫持，导致信息泄露。
+
 正例：
 ```java
 
@@ -63,7 +64,7 @@ intent.putExtra("app",msg);
 PendingIntent.getBroadcast(this, 0, intent, 0));
 ```
 
-如上代码PendingIntent.getBroadcast，PendingItent中包含的Intent为隐式intent，因此当 PendingIntent 触发执行时，发送的 intent 很可能被嗅探或者劫持，导致 intent 内容泄漏。
+
 
 ##### 7.【规范要求】【推荐】
 在实现的 HostnameVerifier 子类中，需要使用 verify 函数效验服务器主机名的合法性，否则会导致恶意程序利用中间人攻击绕过主机名效验。
