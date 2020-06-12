@@ -122,7 +122,7 @@ sslContext.init(null, new TrustManager[] { tm }, null);
 密钥切勿硬编码到代码中。
 
 ##### 10.【规范要求】【推荐】
-加密算法：使用不安全的 Hash 算法(MD5/SHA-1)加密信息，存在被破解的风险，建议使用 SHA-256 等安全性更高的 Hash 算法。
+避免使用不安全的 Hash 算法(MD5/SHA-1)加密信息，存在被破解的风险，建议使用 SHA-256 等安全性更高的 Hash 算法。
 
 ##### 11.【规范要求】【推荐】
 避免将数据储存到 sdcard 中，尽量使用 sqlite、sharedpreferences 或系统私有目录的 file 文件进行数据储存。
