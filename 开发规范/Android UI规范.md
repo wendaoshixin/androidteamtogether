@@ -1,14 +1,14 @@
-Android UI规范
+# Android UI规范
 
 ## 一、全局规范
 
-1.【强制】文字样式，项目开发之初就要抽取设计稿中标题文字等的通用样式，预先定义通用样式。这些样式主要包括：文字大小，颜色，背景，边距等，视情况而定。
+1.【强制】文字样式，项目开发之初就要抽取设计稿中标题文字等的通用样式，预先定义通用样式。这些样式主要包括：文字大小，颜色，背景，边距等，视情况而定。  
 
-2.【推荐】图片样式，UI切图的时候要贴边切，而开发中使用这些图片的时候，就要定义几个规范样式。同样需要定义图片的大小、圆角的等样式。
+2.【推荐】图片样式，UI切图的时候要贴边切，而开发中使用这些图片的时候，就要定义几个规范样式。同样需要定义图片的大小、圆角的等样式。  
 
-3.【推荐】控件的使用，优先使用系统View、组合view、自定义view。
+3.【推荐】控件的使用，优先使用系统View、组合view、自定义view。  
 
-4.【推荐】布局原则：减少层级，推荐使用<include/>,<merge/>,<ViewStub/>,ConstraintLayout。
+4.【推荐】布局原则：减少层级，推荐使用`<include/>、<merge/>、<ViewStub/>、ConstraintLayout`。
 
 include标签常用于将布局中的公共部分提取出来供其他layout共用，以实现布局模块化，这在布局编写方便提供了很大的便利。 
 
@@ -16,9 +16,9 @@ merge标签的使用,降低布局的嵌套层次。该标签的主要使用场�
 第一种是当xml文件的根布局是FrameLayout时，可以用merge作为根节点。  
 第二种情况是当用include标签导入一个共用布局时，如果父布局和子布局根节点为同一类型，可以使用merge将子节点布局的内容合并包含到父布局中，这样就可以减少一级嵌套层次。
 
-ViewStub是一个不可见的，能在运行期间延迟加载的大小为0的View，它直接继承于View。当对一个ViewStub调用inflate()方法或设置它可见时，系统会加载在ViewStub标签中引入的我们自己定义的View，然后填充在父布局当中。也就是说，在对ViewStub调用inflate()方法或设置visible之前，它是不占用布局空间和系统资源的。它的使用场景可以是在我们需要加载并显示一些不常用的View时，例如一些网络异常的提示信息等。
+ViewStub是一个不可见的，能在运行期间延迟加载的大小为0的View，它直接继承于View。当对一个ViewStub调用inflate()方法或设置它可见时，系统会加载在ViewStub标签中引入的我们自己定义的View，然后填充在父布局当中。也就是说，在对ViewStub调用inflate()方法或设置visible之前，它是不占用布局空间和系统资源的。
 
-5.【推荐】UI更新，子线程尽量不要更改UI界面，如果出现程序运行时UI不能更新，崩溃且没有明显的语法错误，请检查自己的是否在非UI创建线程更新了UI。
+5.【推荐】UI更新，子线程尽量不要更改UI界面，如果出现程序运行时UI不能更新，崩溃且没有明显的语法错误，可以检查是否在非UI创建线程更新了UI。
 
 6.【推荐】SurfaceView或TextureView可以通过将绘图操作移动到另一个单独线程上提高性能。如果某些绘图操作影响性能，这时可以考虑使用SurfaceView和TextureView，因为SurfaceView在常规视图系统之外，所以无法像常规试图一样移动、缩放或旋转一个SurfaceView。TextureView是Android4.0引入的，除了与SurfaceView一样在单独线程绘制外，还可以像常规视图一样被改变。
 
@@ -28,7 +28,7 @@ ViewStub是一个不可见的，能在运行期间延迟加载的大小为0的Vi
 说明： 
 Android 应用页面上任何一个 View 都需要经过 measure、layout、draw 三个步骤 才能被正确的渲染。从 xml layout 的顶部节点开始进行 measure，每个子节点都需 要向自己的父节点提供自己的尺寸来决定展示的位置，在此过程中可能还会重新 measure（由此可能导致 measure 的时间消耗为原来的 2-3 倍）。节点所处位置越 深，套嵌带来的 measure 越多，计算就会越费时。这就是为什么扁平的 View 结构 会性能更好。 
 同时，页面拥上的 View越多，measure、layout、draw所花费的时间就越久。要缩 短这个时间，关键是保持 View的树形结构尽量扁平，而且要移除所有不需要渲染的 View。理想情况下，总共的 measure，layout，draw时间应该被很好的控制在 16ms 以内，以保证滑动屏幕时 UI 的流畅。 
-要找到那些多余的 View（增加渲染延迟的 view），可以用 Android Studio Monitor 里的 Hierarachy Viewer 工具，可视化的查看所有的 view。 
+要找到那些多余的 View（增加渲染延迟的 view），可以用 Layout Inspector/Hierarachy Viewer 工具，可视化的查看所有的 view。 
 正例： 
 
 ```
@@ -78,8 +78,10 @@ public void showPromptDialog(String text){
 }
 ```
 
-3.【推荐】源文件统一采用 UTF-8 的形式进行编码。
-4.【推荐】文本大小使用单位 dp，view 大小使用单位 dp。对于 Textview，如果在文 字大小确定的情况下推荐使用 wrap_content 布局避免出现文字显示不全的适配问 题。 
+3.【推荐】源文件统一采用 UTF-8 的形式进行编码。  
+
+4.【推荐】文本大小使用单位 sp，view 大小使用单位 dp。对于 Textview，如果在文 字大小确定的情况下推荐使用 wrap_content 布局避免出现文字显示不全的适配问题。    
+
 5.【推荐】禁止在设计布局时多次设置子 view 和父 view 中为同样的背景造成页面过 度绘制，推荐将不需要显示的布局进行及时隐藏。 
 正例： 
 
@@ -128,12 +130,15 @@ protected void onDraw(Canvas canvas) {
     canvas.drawRect(0, height/2, width, height, mPaint); 
 }
 ```
-6. 【推荐】在需要时刻刷新某一区域的组件时，建议通过以下方式避免引发全局 layout 刷新: 
+
+6.【推荐】在需要时刻刷新某一区域的组件时，建议通过以下方式避免引发全局 layout 刷新: 
 1) 设置固定的 view大小的高宽，如倒计时组件等； 
 2) 调用 view的 layout 方式修改位置，如弹幕组件等； 
 3) 通过修改 canvas 位置并且调用 invalidate(int l, int t, int r, int b)等方式限定刷新 区域； 
 4) 通过设置一个是否允许 requestLayout 的变量，然后重写控件的 requestlayout、 onSizeChanged 方法，判断控件的大小没有改变的情况下，当进入 requestLayout 的时候，直接返回而不调用 super 的 requestLayout 方法。 
-7. 【推荐】不能在 Activity没有完全显示时显示 PopupWindow 和 Dialog。 
+
+7.【推荐】不能在 Activity没有完全显示时显示 PopupWindow 和 Dialog。 
+
 8.【推荐】尽量不要使用 AnimationDrawable，它在初始化的时候就将所有图片加载 到内存中，特别占内存，并且还不能释放，释放之后下次进入再次加载时会报错。 
 说明： 
 Android 的帧动画可以使用 AnimationDrawable 实现，但是如果你的帧动画中如果 包含过多帧图片，一次性加载所有帧图片所导致的内存消耗会使低端机发生 OOM 异常。帧动画所使用的图片要注意降低内存消耗，当图片比较大时，容易出现 OOM。 
