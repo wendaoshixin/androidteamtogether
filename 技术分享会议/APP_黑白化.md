@@ -16,9 +16,9 @@
 #### **那我们如何给app页面加一个灰度效果呢？**
 
 构思过程
-#####。
-#####。
-#####。
+##### **。**
+##### **。**
+##### **。**
 
 我们的 app 页面正常情况下，其实也是 Canvas 绘制出来的对吧？
 
@@ -37,4 +37,4 @@ Canvas 对应的相关 API 肯定也是支持灰度的。
 
 GrayImageView 的代码 与 编译对比图：
 
-![对比图](/Users/lm9/Desktop/对比图.png)
+![Image text](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB%E4%BC%9A%E8%AE%AE/picture/%E5%AF%B9%E6%AF%94%E5%9B%BE.png)
