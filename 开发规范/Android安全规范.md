@@ -103,6 +103,7 @@ HostnameVerifier hnv = new HostnameVerifier() {
 利用 X509TrustManager 子类中的 checkServerTrusted 函数效验服务器端证书的合法性。
 ##### 【详情说明】
 在实现的 X509TrustManager 子类中未对服务端的证书做检验，这样会导致不被信任的证书绕过证书效验机制。
+
 反例：
 ```java
 
