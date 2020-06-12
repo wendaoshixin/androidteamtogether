@@ -22,7 +22,7 @@ ContentProvider对外部输入的数据做合法性校验
 使用 PendingIntent 时，禁止使用空 intent，同时禁止使用隐式 Intent
 ##### 【详情说明】
 
-使用 PendingIntent 时，使用了空 Intent,会导致恶意用户劫持修改 Intent 的内容。禁止使用一个空 Intent 去构造 PendingIntent，构造 PendingIntent 的 Intent一定要设置 ComponentName 或者 action。
+使用 PendingIntent 时，使用了空 Intent,会导致恶意用户劫持修改 Intent 的内容。构造 PendingIntent 的 Intent一定要设置 ComponentName 或者 action。
 PendingIntent 可以让其他 APP 中的代码像是运行自己 APP 中。PendingIntent的intent接收方在使用该intent时与发送方有相同的权限。在使用PendingIntent时，PendingIntent 中包装的 intent 如果是隐式的 Intent，容易遭到劫持，导致信息泄露。
 
 正例：
