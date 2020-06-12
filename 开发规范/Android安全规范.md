@@ -13,7 +13,7 @@
 程序中的启动/使用 Activity、Service、Broadcast Receiver、Content Provider 则由程序定位与需求来确认是否添加自定义访问权限，启动的 Activity、Service、Broadcast Receiver、Content Provider 本身是需要被其他程序进行调用的，如果没有特殊需求（该程序只允许指定 APP 启动）的话就不能添加该权限。
 
 ##### 3.【规范要求】【推荐】
-应避免使用隐式调用 Intent ，包括 Activity、Content provider、Broadcast receiver、Service 等，为了数据安全与性能消耗须使用显式调用尽量减少使用隐式调用。
+应避免使用隐式调用 Intent ，为了数据安全与性能消耗须使用显式调用尽量减少使用隐式调用。
 
 ##### 4.【规范要求】【强制】
 开放的 activity/service/receiver 等需要对传入的 intent 做合法性校验。
@@ -131,7 +131,7 @@ sslContext.init(null, new TrustManager[] { tm }, null);
 使用外部存储实现数据持久化，这里的外部存储一般就是指的是 sdcard。使用 sdcard 存储的数据，不限制只有本应用访问，任何可以有访问 Sdcard 权限的应用均可以访问，容易导致信息泄漏安全风险。
 
 ##### 11.【规范要求】【推荐】
-数据存储在 Sqlite 或者轻量级存储需要对数据进行加密，取出来的时候进行解密。
+数据存储在 Sqlite 或者sharedpreferences需要对数据进行加密，取出来的时候进行解密。
 
 ##### 12.【规范要求】【推荐】
 使用安全的 SQL 语句查询方式，避免出现命令拼接的形式
@@ -148,7 +148,7 @@ Google 在设计 WebView 的时候提供默认自带记住密码的功能，即�
 ##### 16.【规范要求】【推荐】
 避免 webview 通过 file:schema 方式访问本地敏感数据。
 ##### 17.【规范要求】【推荐】
-正式发布的应用应关闭数据备份功能。应在 AndroidManifest.xml 的 Application 参数设置中将 android:allowBackup 参数显示设置为“false”，关闭非 root 情况下允许对应用数据的备份与恢复功能。
+正式发布的应用应关闭数据备份功能。应在 AndroidManifest.xml 的 Application 参数设置中将 android:allowBackup 参数显示设置为“false”
 ##### 【详情说明】
 当在 AndroidManifest.xml 中 application 配置参数 allowBackup 被设置为 true 或不设置该标志时，应用程序数据可以再非 root 状态下进行数据的备份和恢复，攻击者可以通过 adb 调试指令直接复制应用程序数据。造成应用数据泄露风险。
 
