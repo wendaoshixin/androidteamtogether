@@ -2,7 +2,7 @@
 
 4 月 4 日这一天，不少 网站、App 都实现了黑白化。
 
-![黑白图示列](/Users/lm9/Desktop/黑白图.png)
+![Image text](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E6%8A%80%E6%9C%AF%E5%88%86%E4%BA%AB%E4%BC%9A%E8%AE%AE/picture/%E9%BB%91%E7%99%BD%E5%9B%BE.png)
 
 
 那app开发黑白化是不是比较麻烦呢？大家普遍的思路是：
