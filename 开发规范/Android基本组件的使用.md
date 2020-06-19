@@ -101,14 +101,14 @@ FLAG_ACTIVITY_MULTIPLE_TASK,Intent.FLAG_ACTIVITY_NEW_TASK等.
 	 			 	   }
 	 			 	   
 	 			 	   public static final Creator<BeanName> CREATOR = new Creator<BeanName>(){
-	              @Override
-	              public BeanName createFromParcel(Parcel source) {
-	              	return new BeanName(source);
-	              }
-	              @Override
-	              public BeanName[] newArray(int size) {
-	              	return new BeanName[size];
-	              }
+        	              @Override
+        	              public BeanName createFromParcel(Parcel source) {
+        	              	return new BeanName(source);
+        	              }
+        	              @Override
+        	              public BeanName[] newArray(int size) {
+        	              	return new BeanName[size];
+        	              }
 	              
 	 			 	   }
 	 			 	}
