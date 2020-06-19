@@ -5,8 +5,6 @@
 ### 2.证书锁定原理
 证书锁定（SSL/TLS Pinning）提供了两种锁定方式：
 
-Certificate Pinning，证书锁定
-Public Key Pinning，公钥锁定
 - 2.1 证书锁定
 具体操作：将APP代码内置仅接受指定域名的证书，而不接受操作系统或者浏览器内置的CA根证书对应的任何证书。
 
@@ -104,7 +102,7 @@ TrustManager是一个比较老的证书锁定方法，主要用于早期的Andro
     </network-security-config>
 ```
 
-#### 3.okhttp Certificate Pinning
+#### 3.okhttp CertificatePinner
 
 ```java
   private final OkHttpClient client = new OkHttpClient.Builder()
