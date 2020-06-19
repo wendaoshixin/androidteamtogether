@@ -122,7 +122,7 @@ FLAG_ACTIVITY_MULTIPLE_TASK,Intent.FLAG_ACTIVITY_NEW_TASK等.
  
 ```Java
 	 1）在Service中定义服务端Messenger对象：
-	 		private Messenger mMessenger = new Messenger(new Handler()
+	 	 private Messenger mMessenger = new Messenger(new Handler()
 	         {
 	            @Override
 	            public void handleMessage(Message msgfromClient)
@@ -262,13 +262,13 @@ LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
 	  			Uri TABLE_URI = Uri.parse("content://" + AUTHORITY + "/tableName");
 	  			ContentValues contentValues = new ContentValues();
 	  			contentValues.put("id",0);
-	        contentValues.put("name","peter");
+	            contentValues.put("name","peter");
 	  			context.getContentResolver().insert(TABLE_URI,contentValues);
 	  			context.getContentResolver().update(TABLE_URI,contentValues,
 	  			                                    where/**"id = ?"**/, 
 	  			                                    selectionArgs/**new String[] {"0"}**/);
 	  			context.getContentResolver().query(TABLE_URI,projection,selection,selectionArgs,sortOrder);
-	  		  context.getContentResolver().delete(TABLE_URI,where,selectionArgs)；
+	  		    context.getContentResolver().delete(TABLE_URI,where,selectionArgs)；
 
 
   		  
@@ -279,15 +279,15 @@ LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
  使用举例：
 	   			
 ```Java
-ContentObserver contentObserver = new ContentObserver(mHandler) {
+        ContentObserver contentObserver = new ContentObserver(mHandler) {
 	            @Override
 	            public void onChange(boolean change, Uri uri) {
 	                super.onChange(selfChange, uri);
 	                
 	              }
 	          };
-context.getContentResolver().registerContentObserver(AUTHORITY,true,contentObserver);
-	          context.getContentResolver().unregisterContentObserver(contentObserver);
+        context.getContentResolver().registerContentObserver(AUTHORITY,true,contentObserver);
+	    context.getContentResolver().unregisterContentObserver(contentObserver);
 	          
 ```
 
