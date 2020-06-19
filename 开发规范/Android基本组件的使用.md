@@ -286,7 +286,9 @@ LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
 	                
 	              }
 	          };
+	          
         context.getContentResolver().registerContentObserver(AUTHORITY,true,contentObserver);
+    
 	    context.getContentResolver().unregisterContentObserver(contentObserver);
 	          
 ```
