@@ -90,25 +90,25 @@ FLAG_ACTIVITY_MULTIPLE_TASK,Intent.FLAG_ACTIVITY_NEW_TASK等.
 	 			 举例：
 	 			 	public class BeanName implements Parcelable {
 	 			 	   public BeanName(Parcel in) {
-				 			 	   in.readInt();
-				 			 	   //....
+				 			in.readInt();
+				 			//....
 	 			 	   }
 	 			 	   
 	 			 	   @Override
 	 			 	   public void writeToParcel(Parcel dest,int flags){
-	 			 	   		   dest.writeInt(age);
-	 			 	   		   //....
+	 			 	   		 dest.writeInt(age);
+	 			 	   		 //....
 	 			 	   }
 	 			 	   
 	 			 	   public static final Creator<BeanName> CREATOR = new Creator<BeanName>(){
-        	              @Override
-        	              public BeanName createFromParcel(Parcel source) {
-        	              	return new BeanName(source);
-        	              }
-        	              @Override
-        	              public BeanName[] newArray(int size) {
-        	              	return new BeanName[size];
-        	              }
+                    	              @Override
+                    	              public BeanName createFromParcel(Parcel source) {
+                    	              	return new BeanName(source);
+                    	              }
+                    	              @Override
+                    	              public BeanName[] newArray(int size) {
+                    	              	return new BeanName[size];
+                    	              }
 	              
 	 			 	   }
 	 			 	}
