@@ -56,7 +56,7 @@ FLAG_ACTIVITY_MULTIPLE_TASK,Intent.FLAG_ACTIVITY_NEW_TASK等.
  ```Java
 	     1)可以在onServiceDisconnected中重连
 	 		
-	 		2)可以通过
+	 	 2)可以通过
 	      binder.linkToDeath(new IBinder.DeathRecipient() {
 	           @Override
 	           public void binderDied() {
@@ -69,12 +69,12 @@ FLAG_ACTIVITY_MULTIPLE_TASK,Intent.FLAG_ACTIVITY_NEW_TASK等.
  
  ```Java
 	    1)支持的数据类型:
-	 				1>> java 的 8 种数据类型：byte、short、int、long、float、double、boolean、char
-	 				2>> String、charSequence、List、Map。其中List和Map中的元素 AIDL支持的数据类型.
-	 				3>> 自定义数据类型
-	 		2）数据容量：在Binder底层容量显示在4M左右，在App层超过1M的数据，不要通过AIDL传输.
+	 		1>> java 的 8 种数据类型：byte、short、int、long、float、double、boolean、char
+	 		2>> String、charSequence、List、Map。其中List和Map中的元素 AIDL支持的数据类型.
+	 		3>> 自定义数据类型
+	 	2）数据容量：在Binder底层容量显示在4M左右，在App层超过1M的数据，不要通过AIDL传输.
 	 		
-	 		3) 自定义数据类型：
+	 	3) 自定义数据类型：
 			 	 定义BeanName.aidl
 	 			 package com.demo.pacakgeName;
 	 			 parcelable BeanName;
@@ -116,13 +116,13 @@ FLAG_ACTIVITY_MULTIPLE_TASK,Intent.FLAG_ACTIVITY_NEW_TASK等.
 
 4.IntentService:
  
-内部封装了HandlerThread，以及对应的Handler，startService(intent)被传递到了线程的消息队列中等待被串行调度，被调度后，回调到handleIntent(intent)方法.
+    内部封装了HandlerThread，以及对应的Handler，startService(intent)被传递到了线程的消息队列中等待被串行调度，被调度后，回调到handleIntent(intent)方法.
 
 5.Messenger的使用：
  
 ```Java
-	 		1）在Service中定义服务端Messenger对象：
-	 				 private Messenger mMessenger = new Messenger(new Handler()
+	 1）在Service中定义服务端Messenger对象：
+	 		private Messenger mMessenger = new Messenger(new Handler()
 	         {
 	            @Override
 	            public void handleMessage(Message msgfromClient)
@@ -212,15 +212,18 @@ LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
 
  定义：Android中提供的专门用于不同应用间数据交互和共享的组件,一般用于SQLiteOpenHelper的进一步封装.
  
+ 
   1.URI:
-	 			content://com.android.contacts/contacts/contactId
-	 			schema: 在Android中固定为content://
-	      authority: 用于唯一标识一个ContentProvider。
-	      path: ContentProvider中数据表的表名。
-	      id: 数据表中数据的标识，可选字段。
+  
+	 content://com.android.contacts/contacts/contactId
+	 schema: 在Android中固定为content://
+	 authority: 用于唯一标识一个ContentProvider。
+	 path: ContentProvider中数据表的表名。
+	 id: 数据表中数据的标识，可选字段。
 	      
 	      
   2.UriMatcher:帮助匹配ContentProvider中的Uri,提供了两个方法——addURI和match方法
+  
 	  		使用举例：
 	  				UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH);
 	  				String AUTHORITY = "com.android.demo.demo";
@@ -229,17 +232,21 @@ LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
 	  				int uri_code = matcher.match(uri);
 	  			
 3.ContentUris：Uri的辅助类，提供了withAppendedId、parseId、appendId三个静态方法.
+
 	  		使用举例：
 	  				 Uri uri = Uri.parse("content://com.android.demo/demo");
 	  				 Uri withAppendedIdUri = ContentUris.withAppendedId(uri, 1);//content://com.android.demo/demo/1
 	  				 long parseId = ContentUris.parseId(withAppendedIdUri);
 	  				 
  4.ContentProvider的定义：继承android.content.ContentProvider,并实现其中的以下方法：
+ 
 	  		onCreate:在该方法中初始化数据操作对象，例如DBOpenHelper、SQLiteDatabase等工具类.
+	  		
 	  		以及query、insert、delete、update等数据库方法.
 	  		
 	  		
  5. ContentProvider的声明：
+ 
 	      <provider
 	             android:name=".MContentProvider"
 	             android:authorities="com.android.demo.demo"
@@ -249,6 +256,7 @@ LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
 	             android:exported="true"/>
 	             
 6.ContentResolver:数据使用端的API，通过contextWrapper.getContentResolver()获取对象.
+
 	  		使用举例：
 	  			String AUTHORITY = "com.android.demo.demo";
 	  			Uri TABLE_URI = Uri.parse("content://" + AUTHORITY + "/tableName");
@@ -265,9 +273,10 @@ LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
 
   		  
 7.ContentObserver:
-	   			用于监听ContentProvider变化的抽象类，通过ContentResolver的registerContentObserver和unregisterContentObserver方法来注册和注销ContentObserver监听器.
+
+    用于监听ContentProvider变化的抽象类，通过ContentResolver的registerContentObserver和unregisterContentObserver方法来注册和注销ContentObserver监听器.
 	   			
-使用举例：
+ 使用举例：
 	   			
 ```Java
 ContentObserver contentObserver = new ContentObserver(mHandler) {
@@ -291,12 +300,14 @@ context.getContentResolver().registerContentObserver(AUTHORITY,true,contentObser
 	 
 ```Java
 1）Handler.Callback callback = new Handler.Callback() {
-	                  @Override
-	                  public boolean handleMessage(@NonNull Message msg) {
-	                      return false;
-	                  }
-	              };
-	           Handler mHandler = new Handler(callback);
+	          @Override
+	          public boolean handleMessage(@NonNull Message msg) {
+	                 return false;
+	          }
+	         };
+	          Handler mHandler = new Handler(callback);
+	     
+	     
 	     
 	        2）Handler mHandler = new Handler() {
 	                  @Override
@@ -304,6 +315,8 @@ context.getContentResolver().registerContentObserver(AUTHORITY,true,contentObser
 	                      super.handleMessage(msg);
 	                  }
 	              };
+	              
+	              
 	        3）private static class CustomHandler extends Handler{  
 	
 	              private final WeakReference<Activity> mActivty;  
@@ -326,10 +339,10 @@ context.getContentResolver().registerContentObserver(AUTHORITY,true,contentObser
  2:发送消息的常用方法,以下方法相对应也有post方法：  
  
  ```Java
- sendMessage(null);
-	        sendMessageDelayed(null, 0);
-	 	  		sendMessageAtFrontOfQueue(null);
-	        sendMessageAtTime(null, 0);
+    sendMessage(null);
+    sendMessageDelayed(null, 0);
+    sendMessageAtFrontOfQueue(null);
+	sendMessageAtTime(null, 0);
  ``` 
 	   
  3.同步屏障、异步消息：
@@ -338,19 +351,19 @@ context.getContentResolver().registerContentObserver(AUTHORITY,true,contentObser
  
   - 1）异步消息通过以下两种方式获取：
 
-  一:创建用于发送异步消息的Handler
-	 				public Handler(boolean async);
+        一:创建用于发送异步消息的Handler
+	 		public Handler(boolean async);
 	        public Handler(Callback callback, boolean async);
 	        public Handler(Looper looper, Callback callback, boolean async);
 	        
- 二：调用Message的方法setAsynchronous(true)，将消息标识为异步消息.
+        二：调用Message的方法setAsynchronous(true)，将消息标识为异步消息.
  
-   -  2)同步屏障：同步屏障的添加和移除是通过反射调用
+   - 2) 同步屏障：同步屏障的添加和移除是通过反射调用
 
    ```Java
-MessageQueue的 postSyncBarrier和removeSyncBarrier方法：
-	    	 示例：
-	    	 		// 添加屏障
+             MessageQueue的 postSyncBarrier和removeSyncBarrier方法：
+	    	  示例：
+	    	  // 添加屏障
 	          MessageQueue queue=mHandler1.getLooper().getQueue();
 	          Method method=MessageQueue.class.getDeclaredMethod("postSyncBarrier");
 	          int token= (int) method.invoke(queue);
