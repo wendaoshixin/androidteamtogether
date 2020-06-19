@@ -8,7 +8,7 @@
 - 2.1 证书锁定
 具体操作：将APP代码内置仅接受指定域名的证书，而不接受操作系统或者浏览器内置的CA根证书对应的任何证书。
 
-缺点：CA签发证书存在有效期问题，在证书续期后需要将证书重新内置到APP内。
+缺点：CA签发证书存在有效期问题，在证书续期后需要将证书重新内置到APP内。(可以内置根证书或者中间证书来增加灵活性)
 
 - 2.2 公钥锁定
 具体做法：公钥锁定是提前证书中的公钥并内置到移动端APP内，通过与服务器对比公钥值来验证连接的合法性。
@@ -171,3 +171,4 @@ CertificatePinner certificatePinner = new CertificatePinner.Builder()
     .add("publicobject.com", "sha256/lCppFqbkrlJ3EcVFAkeip0+44VaoJUymbnOaEUk7tEU=")
     .build();
 ```
+
