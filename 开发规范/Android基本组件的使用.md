@@ -295,7 +295,7 @@ LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
 
 ## Handler
 
-定义：用于数据在线程间消息通信.
+定义：用于线程间消息数据通信.
 
 1:常用的代码写法：
 	   					
