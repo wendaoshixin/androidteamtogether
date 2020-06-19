@@ -142,7 +142,7 @@ FLAG_ACTIVITY_MULTIPLE_TASK,Intent.FLAG_ACTIVITY_NEW_TASK等.
 	     2）在Service的onBinder中，返回Messenger的binder对象，mMessenger.getBinder();
 	    
 	     3）在Activity中定义两个客户端Messenger对象,一个用于发送，一个用于回调,并在onServiceConnected中初始化：
-	    			private Messenger mMessenger = new Messenger(new Handler()
+	    	  private Messenger mMessenger = new Messenger(new Handler()
 	          {
 	              @Override
 	              public void handleMessage(Message msgFromServer)
