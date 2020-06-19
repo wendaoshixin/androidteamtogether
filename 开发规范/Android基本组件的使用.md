@@ -262,7 +262,7 @@ LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
 	  			Uri TABLE_URI = Uri.parse("content://" + AUTHORITY + "/tableName");
 	  			ContentValues contentValues = new ContentValues();
 	  			contentValues.put("id",0);
-	            contentValues.put("name","peter");
+	  		    contentValues.put("name","peter");
 	  			context.getContentResolver().insert(TABLE_URI,contentValues);
 	  			context.getContentResolver().update(TABLE_URI,contentValues,
 	  			                                    where/**"id = ?"**/, 
@@ -289,7 +289,7 @@ LocalBroadcastManager.getInstance(this).unregisterReceiver(receiver);
 	          
         context.getContentResolver().registerContentObserver(AUTHORITY,true,contentObserver);
     
-	    context.getContentResolver().unregisterContentObserver(contentObserver);
+        context.getContentResolver().unregisterContentObserver(contentObserver);
 	          
 ```
 
