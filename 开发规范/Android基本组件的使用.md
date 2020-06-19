@@ -25,9 +25,9 @@
 
    举例：
 
-  ​      **1).**  standard模式的activity，在启动时，加上addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT | Intent.FLAG_ACTIVITY_NEW_TASK)，会启动在在一个新的任务栈中.
+  ​  **1).**  standard模式的activity，在启动时，加上addFlags(Intent.FLAG_ACTIVITY_NEW_DOCUMENT | Intent.FLAG_ACTIVITY_NEW_TASK)，会启动在在一个新的任务栈中.
 
-  ​    **2).**  singleTask模式的activity，通过配置taskAffinity，会启动在一个新的任务栈中.在手机上的表现是最近应用列表中，同一个应用会有两个页面.
+  ​  **2).**  singleTask模式的activity，通过配置taskAffinity，会启动在一个新的任务栈中.在手机上的表现是最近应用列表中，同一个应用会有两个页面.
 
 
 
@@ -81,7 +81,7 @@
 
  **3.AIDL:**
 
- ```java
+
 	    1)支持的数据类型:
 	 				1>> java 的 8 种数据类型：byte、short、int、long、float、double、boolean、char
 	 				2>> String、charSequence、List、Map。其中List和Map中的元素 AIDL支持的数据类型.
@@ -127,7 +127,7 @@
 	              
 	 			 	   }
 	 			 	}
- ```
+
 
 
 
