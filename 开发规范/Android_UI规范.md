@@ -17,10 +17,6 @@
 ## 二、注意细节
 
 1.【推荐】布局中不得不使用 ViewGroup 多重嵌套时，不要使用 LinearLayout 嵌套， 改用 ConstraintLayout/RelativeLayout，可以有效降低嵌套数。 
-说明： 
-Android 应用页面上任何一个 View 都需要经过 measure、layout、draw 三个步骤 才能被正确的渲染。从 xml layout 的顶部节点开始进行 measure，每个子节点都需 要向自己的父节点提供自己的尺寸来决定展示的位置，在此过程中可能还会重新 measure（由此可能导致 measure 的时间消耗为原来的 2-3 倍）。节点所处位置越 深，套嵌带来的 measure 越多，计算就会越费时。这就是为什么扁平的 View 结构 会性能更好。 
-同时，页面拥上的 View越多，measure、layout、draw所花费的时间就越久。要缩 短这个时间，关键是保持 View的树形结构尽量扁平，而且要移除所有不需要渲染的 View。理想情况下，总共的 measure，layout，draw时间应该被很好的控制在 16ms 以内，以保证滑动屏幕时 UI 的流畅。 
-要找到那些多余的 View（增加渲染延迟的 view），可以用 Layout Inspector/Hierarachy Viewer 工具，可视化的查看所有的 view。 
 正例： 
 
 ```
@@ -124,6 +120,7 @@ protected void onDraw(Canvas canvas) {
 ```
 
 6.【推荐】在需要时刻刷新某一区域的组件时，建议通过以下方式避免引发全局 layout 刷新: 
+
 1) 设置固定的 view大小的高宽，如倒计时组件等； 
 2) 调用 view的 layout 方式修改位置，如弹幕组件等； 
 3) 通过修改 canvas 位置并且调用 invalidate(int l, int t, int r, int b)等方式限定刷新 区域； 
@@ -132,8 +129,7 @@ protected void onDraw(Canvas canvas) {
 7.【推荐】不能在 Activity没有完全显示时显示 PopupWindow 和 Dialog。 
 
 8.【推荐】尽量不要使用 AnimationDrawable，它在初始化的时候就将所有图片加载 到内存中，特别占内存，并且还不能释放，释放之后下次进入再次加载时会报错。 
-说明： 
-Android 的帧动画可以使用 AnimationDrawable 实现，但是如果你的帧动画中如果 包含过多帧图片，一次性加载所有帧图片所导致的内存消耗会使低端机发生 OOM 异常。帧动画所使用的图片要注意降低内存消耗，当图片比较大时，容易出现 OOM。 
+
 正例： 
 图片数量较少的 AnimationDrawable 还是可以接受的。 
 
@@ -189,9 +185,8 @@ Android 的帧动画可以使用 AnimationDrawable 实现，但是如果你的�
 3) https://segmentfault.com/a/1190000005987659 
 4) https://developer.android.com/reference/android/graphics/drawable/Animatio nDrawable.html
 
-9.【强制】不能使用 ScrollView 包裹 ListView/GridView/ExpandableListVIew;因为这 样会把 ListView 的所有 Item 都加载到内存中，要消耗巨大的内存和 cpu 去绘制图 面。 
-说明： 
-ScrollView中嵌套 List 或 RecyclerView的做法官方明确禁止。除了开发过程中遇到 的各种视觉和交互问题，这种做法对性能也有较大损耗。ListView 等 UI 组件自身有 垂直滚动功能，也没有必要在嵌套一层 ScrollView。目前为了较好的 UI 体验，更贴 近 Material Design 的设计，推荐使用 NestedScrollView。 
+9.【推荐】不能使用 ScrollView 包裹 ListView/GridView/ExpandableListVIew;因为这 样会把 ListView 的所有 Item 都加载到内存中，要消耗巨大的内存和 cpu 去绘制图 面。 
+
 正例：
 
 ```
