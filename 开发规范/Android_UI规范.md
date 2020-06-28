@@ -12,7 +12,7 @@
 
 5.【推荐】UI更新，子线程尽量不要更改UI界面，如果出现程序运行时UI不能更新，崩溃且没有明显的语法错误，可以检查是否在非UI创建线程更新了UI。
 
-6.【推荐】SurfaceView或TextureView可以通过将绘图操作移动到另一个单独线程上提高性能。如果某些绘图操作影响性能，这时可以考虑使用SurfaceView和TextureView，因为SurfaceView在常规视图系统之外，所以无法像常规试图一样移动、缩放或旋转一个SurfaceView。TextureView是Android4.0引入的，除了与SurfaceView一样在单独线程绘制外，还可以像常规视图一样被改变。
+6.【推荐】SurfaceView或TextureView可以通过将绘图操作移动到另一个单独线程上提高性能。
 
 ## 二、注意细节
 
