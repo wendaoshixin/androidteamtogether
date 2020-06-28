@@ -10,21 +10,13 @@
 
 4.【推荐】布局原则：减少层级，推荐使用`<include/>、<merge/>、<ViewStub/>、ConstraintLayout`。
 
-include标签常用于将布局中的公共部分提取出来供其他layout共用，以实现布局模块化，这在布局编写方便提供了很大的便利。 
-
-merge标签的使用,降低布局的嵌套层次。该标签的主要使用场景主要包括两种：  
-第一种是当xml文件的根布局是FrameLayout时，可以用merge作为根节点。  
-第二种情况是当用include标签导入一个共用布局时，如果父布局和子布局根节点为同一类型，可以使用merge将子节点布局的内容合并包含到父布局中，这样就可以减少一级嵌套层次。
-
-ViewStub是一个不可见的，能在运行期间延迟加载的大小为0的View，它直接继承于View。当对一个ViewStub调用inflate()方法或设置它可见时，系统会加载在ViewStub标签中引入的我们自己定义的View，然后填充在父布局当中。也就是说，在对ViewStub调用inflate()方法或设置visible之前，它是不占用布局空间和系统资源的。
-
 5.【推荐】UI更新，子线程尽量不要更改UI界面，如果出现程序运行时UI不能更新，崩溃且没有明显的语法错误，可以检查是否在非UI创建线程更新了UI。
 
 6.【推荐】SurfaceView或TextureView可以通过将绘图操作移动到另一个单独线程上提高性能。如果某些绘图操作影响性能，这时可以考虑使用SurfaceView和TextureView，因为SurfaceView在常规视图系统之外，所以无法像常规试图一样移动、缩放或旋转一个SurfaceView。TextureView是Android4.0引入的，除了与SurfaceView一样在单独线程绘制外，还可以像常规视图一样被改变。
 
 ## 二、注意细节
 
-1.【强制】布局中不得不使用 ViewGroup 多重嵌套时，不要使用 LinearLayout 嵌套， 改用 ConstraintLayout/RelativeLayout，可以有效降低嵌套数。 
+1.【推荐】布局中不得不使用 ViewGroup 多重嵌套时，不要使用 LinearLayout 嵌套， 改用 ConstraintLayout/RelativeLayout，可以有效降低嵌套数。 
 说明： 
 Android 应用页面上任何一个 View 都需要经过 measure、layout、draw 三个步骤 才能被正确的渲染。从 xml layout 的顶部节点开始进行 measure，每个子节点都需 要向自己的父节点提供自己的尺寸来决定展示的位置，在此过程中可能还会重新 measure（由此可能导致 measure 的时间消耗为原来的 2-3 倍）。节点所处位置越 深，套嵌带来的 measure 越多，计算就会越费时。这就是为什么扁平的 View 结构 会性能更好。 
 同时，页面拥上的 View越多，measure、layout、draw所花费的时间就越久。要缩 短这个时间，关键是保持 View的树形结构尽量扁平，而且要移除所有不需要渲染的 View。理想情况下，总共的 measure，layout，draw时间应该被很好的控制在 16ms 以内，以保证滑动屏幕时 UI 的流畅。 
