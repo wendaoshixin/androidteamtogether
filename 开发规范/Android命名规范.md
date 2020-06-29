@@ -31,33 +31,5 @@
 
 1、utils（工具类）、adapter（适配器）、base（基类）、bean（对象类）、config（配置类）、httpservice（请求接口）、interface（操作接口类）、model（M继承interface）、view、widget(自定义视图)、db、service、broadcast、provider
 
-##### 三、变量规范
 
-Java普通变量：
-
-resultString
-
-userBean
-
-loginPresenter
-
-
-
-Android控件变量：【控件缩写】+【控件逻辑名称】
-
-loginBtn
-
-inputPwdEt
-
-showNameTv
-
-
-
-常量命名：public static final String **API_URL** = "http://www.leimans.com/#/";
-
-##### 四、常用控件缩写
-
-1、LinearLayout xxx_layout xxxLLayout 
-
-2、icon ic
 
