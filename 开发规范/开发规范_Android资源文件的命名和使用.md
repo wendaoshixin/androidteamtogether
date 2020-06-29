@@ -15,13 +15,13 @@
 *   include 的 layout 以 include_ 开头
 
   
-*   ListView 的行 layout 以 list_item_ 开头
+*   ListView 的行 layout 以 item_ 开头
 
    
-*  RecyclerView 的 item layout 以 recycle_item_ 开头
+*  RecyclerView 的 item layout 以 item_ 开头
 
    
-*  GridView 的 item layout 以 grid_item_ 开头
+*  GridView 的 item layout 以 item_ 开头
 
    
 
@@ -85,14 +85,14 @@
 *  规则:
 
        
-       模块名_逻辑名称_颜色
+       颜色_色值
       
 
   
 *   如下所示：
     
        ```java
-       <color name="dialog_progress_bg_black_color">#5F000000</color>
+       <color name="black_color_5F000000">#5F000000</color>
        ```
 
    
@@ -103,14 +103,14 @@
 *  规则：
 
    ```java
-   模块名_描述信息
+   描述信息_具体宽度值
    ```
 
    
 *  如下所示：
 
    ```java
-   <dimen name="splash_logo_width">120dp</dimen>
+   <dimen name="logo_width_120dp">120dp</dimen>
    ```
 
    
@@ -144,14 +144,14 @@
 *  规则：
 
    ```java
-   模块名_逻辑名称
+   逻辑名称
    ```
 
    
 *  如下所示：
 
    ```java
-   <string name="game_setting_show_mouse">显示鼠标</string>
+   <string name="show_mouse">显示鼠标</string>
    ```
 
 **9.id命名， 使用小写单词+下划线分割【推荐】**
