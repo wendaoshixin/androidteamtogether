@@ -16,10 +16,8 @@
    ```java
    /**
     * desc   : xxxx 描述
-    * author : Blankj
     * date   : 2020/06/03
     * version: 1.0
-    * 版权所有:雷漫网络科技
     */
    public class WelcomeActivity {
        ...
@@ -32,10 +30,8 @@
 ```java
    /**
     * desc   :
-    * author : ${USER}
     * date   : ${YEAR}/${MONTH}/${DAY}
     * version: 1.0
-    * 版权所有:雷漫网络科技
     */
 ```
 
