@@ -43,7 +43,7 @@
 
 示例图（来源简书）：
 
-![](/Users/lm233/Downloads/13183199-b45a2835bcd11234.webp)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/gitflow%E6%B5%81%E7%A8%8B%E5%9B%BE.webp)
 
 
 
@@ -101,17 +101,17 @@
 
 示例图（Sourcetree - 快捷键：option+command+F）：
 
-![](/Users/lm233/Downloads/clipboard3f0feae9c1aa1f65468e69c1129f1f4834537926.jpeg)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/gitflow%E6%93%8D%E4%BD%9C%E5%9B%BE1.jpeg)
 
 ##### 新建相关分支:
 
 示例图（Sourcetree - 快捷键：option+command+F）：
 
-![](/Users/lm233/Downloads/clipboard372739f6c4a857af3227b0d7c3fee0f656f22ecd.jpeg)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/gitflow%E6%93%8D%E4%BD%9C%E5%9B%BE2.jpeg)
 
 分支示例图：
 
-![](/Users/lm233/Downloads/clipboard473476e46fdc596830743a8a061b0fcad1b8ab4f.jpeg)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/gitflow%E5%88%86%E6%94%AF%E7%A4%BA%E4%BE%8B%E5%9B%BE.jpeg)
 
 
 
