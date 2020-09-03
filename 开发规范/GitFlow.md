@@ -10,6 +10,8 @@
 - 该分支为只读唯一分支 , 只能从其他分支(release/hotfix)合并 , 不能在此分支修改
 - 另外所有在master分支的推送应该打标签做记录,方便追溯
 - 例如release合并到master , 或hotfix合并到master
+- Master分支上存放的是最稳定的正式版的代码,任何人不允许在Master上进行代码的直接提交，只接受合入,并设置相应的合入权限
+- 该分支上的代码必须是经过多轮测试且已发布的release分支或hotfix分支合并进去，合并后生成相应的TAG，方便追溯（命名建议为：TAG+相应版本号）
 
 ###### develop:
 
@@ -87,6 +89,8 @@
 
 * 5.开启最终的回归测试后启动release_version预发布分支，从develop检出，回归测试中出现bug只在release_version分支解决，最终merge到develop和master中，并打上Tag。
 
+* 6.并行开发过程中，非当前版本分支只允许rebase，不允许合并请求。
+
 > 优点：release分支中的代码是有保证且相对稳定的，可以快速追溯到问题点（改动被控制）。develop分支严格控制在开发的整体流程中，master分支被严格保护。
 > 
 > 缺点：操作较繁琐。
@@ -98,6 +102,7 @@
 * 2.修复并进行测试。
   
 * 3.完成后merge到develop和master中，并打上Tag。
+
   
 * 注：正常情况下只允许存在一个hotfix分支，避免分支混乱导致难以控制的问题，并在merge后删除。
 
