@@ -43,9 +43,9 @@
 
 #### 工作流程
 
-示例图（来源简书）：
+示例图：
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/gitflow%E6%B5%81%E7%A8%8B%E5%9B%BE1.jpeg)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/gitflow%E6%B5%81%E7%A8%8B%E5%9B%BE3.jpeg)
 
 
 
