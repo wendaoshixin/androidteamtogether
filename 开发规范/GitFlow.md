@@ -48,12 +48,17 @@
 ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/gitflow%E6%B5%81%E7%A8%8B%E5%9B%BE.jpeg)
 
 
+> develop不能直接进行提交，只允许检出和合并
+>
+> develop不允许被合并到其他分支，其他分支需要更新develop的代码只能rebase
+>
+> 所有需要修改的代码，都由原有分支检出（master、develop等），再合并
 
 ###### 新功能开发：
 
 * 1.从develop检出feature_version_name（例）分支，进行新功能开发
   
-* 2.功能开发完成request merge，请求合并到develop（不严格要求，即未完成也允许请求合并）
+* 2.功能开发完成merge request，请求合并到develop（不严格要求，即未完成也允许请求合并）
   
 * 3.功能开发完成后删除本地及远程分支（或者规定在下个版本开始时删除）
   
@@ -65,25 +70,13 @@
 
 ###### 修复BUG：
 
-###### 方案1（标准方案）:
-
-* 1.从develop中检出release_version_fixbug分支,进行bug修复
-
-* 2.在该分支上进行测试，测试完成后合入develop和master中并标记Tag
-
-> - 优点：操作方便，定义清晰
-> 
-> - 缺点：release分支代码稳定性不可控，不能快速的追溯到问题产生点。
-
-###### 方案2（个人推荐）：
-
 > 前提：release定义为预发布分支，只进行最终的回归测试
 
 * 1.从develop中检出feature_version_name_fixbug分支,进行bug修复
 
 * 2.每修复一个bug生成一次提交（【fixbug】detail）(可以快速的定位到问题代码)
 
-* 3.修复完成后进行request merge
+* 3.修复完成后进行merge request
 
 * 4.从develop进行前期的开发测试
 
