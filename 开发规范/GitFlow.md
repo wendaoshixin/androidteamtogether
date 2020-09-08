@@ -141,4 +141,39 @@
 > 
 > 如： **git checkout -b xxx**
 
+使用示例(SourceTree):
 
+> *这里只是示例和注意事项，因为每个人的操作习惯都不一样，建议参考，但不强制要求执行*
+
+> 创建新的功能分支，如果目前有正在进行的功能分支，需要切换到develop中，否则会影响当前的功能分支进度。
+
+- commit:本地提交，无限制
+  
+- pull:在需要push之前，切换到develop中进行pull操作
+  
+- push:切换到需要push的分支，push前先rebase到develop，再进行push
+  
+
+###### 例1: 检出分支
+
+![git push 1jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/git_push_1.jpeg)
+
+###### 例2:push前的rebase，先pull下来develop，再rebase到develop，进行push
+
+![git push 2jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/git_push_2.jpeg.jpeg)
+
+###### 例3:分支未合并到develop，多次push后会出现下面这种情况，这时候删除当前分支的远程分支即可，再进行rebase和push
+
+![git push 3jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/git_push_3.jpeg)
+
+###### 例4:完成功能开发（Sourcetree - 快捷键：option+command+F）
+
+![git push 41jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/git_push_4_1.jpeg)
+
+![git push 42jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/git_push_4_2.jpeg)
+
+> 不建议在SourceTree上进行这个操作，因为上面的操作流程中已经包含了这个操作了，而且更加灵活，可多次提交和合并，只需要在merge后删除本地分支和远程分支即可
+
+###### 例5:多分支提交后的流程支线（这两个分支都基于最底下的点检出的，但是按上面流程操作，分支就不会产生交叉）
+
+![git push 5jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/git_push_5.jpeg)
