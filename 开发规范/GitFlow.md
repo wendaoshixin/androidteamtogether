@@ -1,4 +1,4 @@
-# GitFlow开发流程规范初稿
+# GitFlow开发流程规范
 
 
 
