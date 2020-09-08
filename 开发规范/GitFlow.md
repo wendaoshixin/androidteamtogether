@@ -160,7 +160,7 @@
 
 ###### 例2:push前的rebase，先pull下来develop，再rebase到develop，进行push
 
-![git push 2jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/git_push_2.jpeg.jpeg)
+![git push 2jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/git_push_2.jpeg)
 
 ###### 例3:分支未合并到develop，多次push后会出现下面这种情况，这时候删除当前分支的远程分支即可，再进行rebase和push
 
