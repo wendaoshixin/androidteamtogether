@@ -12,11 +12,11 @@
 
 * custom scope:自定义范围
 
-![lint_1.jpeg](/Users/lm233/Downloads/lint_1.jpeg)
+![lint_1.jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/lint_1.jpeg)
 
 检查完毕后会弹出 Inspection 的控制台，并在其中列出详细的检查结果：
 
-![lint_2.jpeg](/Users/lm233/Downloads/lint_2.jpeg)
+![lint_2.jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/lint_2.jpeg)
 
 如上图所展示的，Android Lint 对检查的结果进行了分类，同一个规则（issue）下的问题会聚合，其中针对 Android 的规则类别会在分类前说明是 Android 相关的，主要是六类：
 
@@ -43,7 +43,7 @@ Ignore
 
 在结果列表中点击一个条目，可以看到详细的源文件名和位置，以及命中的错误规则（issue）、解决方案或者屏蔽提示
 
-![lint_3.jpeg](/Users/lm233/Downloads/lint_3.jpeg)
+![lint_3.jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/lint_3.jpeg)
 
 如上图所示，系统会提示所导致的错误规则，包括未配置的国际化语言
 
@@ -111,7 +111,7 @@ android {
 
 **lint.xml** 这个文件则是配置 Lint 需要禁用哪些规则（issue），以及自定义规则的严重程度（severity），lint.xml 文件是通过 **issue 标签**指定对一个规则的控制，在**项目根目录**中建立一个 lint.xml 文件后 **Android Lint 会自动识别该文件**，在执行检查时按照 lint.xml 的内容进行检查。如上面提到的那样，开发者也可以通过 lintOptions 中的 lintConfig 选项来指定配置文件。一个 lint.xml 示例如下：
 
-![line_3.webp](/Users/lm233/Downloads/line_3.webp)
+![line_3.webp](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/line_3.webp)
 
 issue 标签中使用 **id 指定一个规则**，severity="ignore" 则表明禁用这个规则。需要注意的是，某些规则可以通过 ignore 标签指定仅对某些属性禁用，例如上面的 Deprecated，表示检查是否有使用不推荐的属性和方法，而在 issue 标签中包裹一个 ignore 标签，在 ignore 标签的 regexp 属性中使用正则表达式指定了 singleLine，则表明对 singleLine 这个属性屏蔽检查。
 
