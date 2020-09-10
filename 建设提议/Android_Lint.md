@@ -1,4 +1,103 @@
-###### Android Lint
+P3C代码扫描
+
+p3c是阿里巴巴提供的Java代码检测规范，并且提供了Android Studio插件供我们使用，除了可以进行扫描检查之外，还有实时代码规范提示功能。
+
+### 插件安装
+
+通过Jetbrains官方仓库安装
+
+1. 打开 Settings >> Plugins >> Browse repositories...
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_1.png)
+
+2. 在搜索框输入alibaba即可看到Alibaba Java Code Guidelines插件，点击Install进行安装，然后重启IDE生效 `注意：因为插件zip包托管在Jetbrains官方CDN上，所以是从国外的服务器进行下载，可能会出现超时的情况`
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_2.png)
+
+---
+
+### 插件使用
+
+目前插件实现了开发手册中的的53条规则，大部分基于PMD实现，其中有4条规则基于IDEA实现，并且基于IDEA [Inspection](https://www.jetbrains.com/help/idea/code-inspection.html)实现了实时检测功能。部分规则实现了Quick Fix功能，对于可以提供Quick Fix但没有提供的，我们会尽快实现，也欢迎有兴趣的同学加入进来一起努力。 目前插件检测有两种模式：实时检测、手动触发。
+
+###
+
+##### 实时检测
+
+实时检测功能会在开发过程中对当前文件进行检测，并以高亮的形式提示出来，同时也可以支持Quick Fix，该功能默认开启，可以通过配置关闭。
+
+##### 结果高亮提示
+
+检测结果高亮提示，并且鼠标放上去会弹出提示信息。
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_3.png)
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_4.png)
+
+##### 智能QuickFix功能
+
+Alt+Enter键可呼出Intention菜单，不同的规则会提示不同信息的Quick Fix按钮
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_5.png)
+
+##### 关闭实时检测
+
+在某些情况下，我们不希望对代码提示违规信息，比如我们在阅读Github开源项目代码的时候，如果界面出现一堆红色、黄色的提示，此时心里肯定是飘过一万只草泥马。这个时候我们可以通过Inspection的设置关闭实时检测功能。
+
+1. 通过右键快速关闭（打开）所有规则的实时检测功能
+
+ ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_6.png) 
+
+2. 通过Settings >> Editor >> Inspections 进行手动设置
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_7.png)
+
+也可以关闭某条规则的实时检测功能或者修改提示级别。
+
+#### 代码扫描
+
+可以通过右键菜单、Toolbar按钮、快捷键三种方式手动触发代码检测。同时结果面板中可以对部分实现了QuickFix功能的规则进行快速修复。
+
+##### 触发扫描
+
+在当前编辑的文件中点击右键，可以在弹出的菜单中触发对该文件的检测。
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_8.png)
+
+在左侧的Project目录树种点击右键，可以触发对整个工程或者选择的某个目录、文件进行检测。
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_9.png)
+
+##### 扫描结果
+
+检测结果直接使用IDEA Run Inspection By Name功能的结果界面，插件的检测结果分级为Blocker、Critical、Major。默认按等级分组，方便统计每个级别错误的数量。
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_10.png)
+
+默认情况我们在结果面板需要双击具体违规项才能打开对应的源文件，开启Autoscroll To Source选项，单击面板中的文件名、或者是具体的违规项的时候IDEA会自动打开对应的源文件。
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_11.png)
+
+##### QuickFix
+
+对于实现Quick Fix的规则，在结果面板中可以直接一键修复 `注意：IDEA14、15可以通过左下角的灯泡进行一键修复操作。`
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_12.png)
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_13.png)
+
+## 代码提交时检测
+
+1. 在提交代码框勾选Alibaba Code Guidelines选项 
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_14.png) 
+
+2. 如果有违反手册的地方会提示是否继续提交，选择取消后会自动对修改的代码进行扫描 
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_15.png) 
+
+
+## Android Lint
 
 ##### 检索
 
