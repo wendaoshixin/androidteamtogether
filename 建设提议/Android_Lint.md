@@ -117,4 +117,124 @@ issue 标签中使用 **id 指定一个规则**，severity="ignore" 则表明禁
 
 另外开发者也可以使用 @SuppressLint(issue id) 标注针对某些代码忽略某些 Lint 检查，这个标注既可以加到成员变量之前，也可以加到方法声明和类声明之前，分别针对不同范围进行屏蔽。
 
-> 
+
+**PMD代码静态检查**
+
+##### 安装：
+
+1. 自动安装：file --> settings --> plugins  搜索  pmd
+  
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_1.png)
+
+2. 下载进行安装：
+  
+
+[PMDPlugin - Plugins | JetBrains](https://plugins.jetbrains.com/plugin/1137-pmdplugin)
+
+##### IDE 插件直接使用：
+
+1. pmd支持自定义规则集，配置规则：
+  
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_2.png)
+
+2. 用户可以选择在单个或者多个文件或文件夹上运行PMD：
+  
+
+-  选中 文件或文件夹 --> 右击 --> Run PDM --> 选择规则集
+  
+  ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_3.png)
+  
+- 常用的规则定义
+  
+  ```
+  <div>
+  <?xml version="1.0"?>
+  <ruleset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" name="alibaba-pmd"
+      xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+      xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 http://pmd.sourceforge.net/ruleset_2_0_0.xsd">
+      <rule ref="rulesets/java/ali-concurrent.xml"/>
+      <rule ref="rulesets/java/ali-comment.xml"/>
+      <rule ref="rulesets/java/ali-naming.xml">
+      </rule>
+      <rule ref="rulesets/java/ali-constant.xml">
+      </rule>
+      <rule ref="rulesets/java/ali-other.xml"/>
+      <rule ref="rulesets/java/ali-orm.xml"/>
+      <rule ref="rulesets/java/ali-exception.xml"/>
+      <rule ref="rulesets/java/ali-oop.xml">
+      </rule>
+      <rule ref="rulesets/java/ali-set.xml"/>
+      <rule ref="rulesets/java/ali-flowcontrol.xml">
+      </rule>
+  </ruleset>
+  </div>
+  ```
+  
+
+3. 另外一种执行方式：Tools -> PMD -> PreDefined
+  
+  ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_4.png)
+  
+4. 开始pmd检查，并显示检查的结果。
+  
+
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_5.png)
+
+##### gradle插件方式使用：
+
+1. gradle插件
+  
+  ```
+  apply plugin: 'pmd'
+  
+  
+  check.dependsOn 'pmd'
+  
+  def configDir = "${project.rootDir}/scripts"
+  def reportsDir = "${project.buildDir}/reports"
+  
+  print("reportsDir=${reportsDir}")
+  
+  task pmd(type: Pmd) {
+      ignoreFailures = true
+      ruleSetFiles = files("$configDir/pmd/pmd-ruleset.xml")
+      ruleSets = []
+  
+      source 'src'
+      include '**/*.java'
+      exclude '**/gen/**'
+  
+      reports {
+          xml.enabled = false
+          html.enabled = true
+          xml {
+              destination file("$reportsDir/pmd/pmd.xml")
+          }
+          html {
+              destination file("$reportsDir/pmd/pmd.html")
+          }
+      }
+  }
+  ```
+  
+2. 模块引用插件
+  
+  ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_6.png)
+  
+3. 执行检测，点击pmd任务或者执行命令行执行
+  
+  ```undefined
+  ./gradlew check
+  ```
+  
+  ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_7.png)
+  
+4. 查看检查结果
+    
+    ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_8.png)
+    
+5. 结果为html或者xml格式，自行配置
+      
+    ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_9.png)
