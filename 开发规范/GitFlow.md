@@ -119,6 +119,28 @@
 
 ### GitFlow操作流程
 
+- commit:本地提交，无限制
+  
+- pull:在需要push之前，切换到develop中进行pull操作
+  
+- push:切换到需要push的分支，push前先rebase到develop，再进行push
+
+> 操作流程
+> 1. 检出分支
+> 
+> 2. 将修改的代码提交到本地
+>  
+> 3. 切换到develop，pull最新的代码
+> 
+> 4. 切换到自己的分支
+> 
+> 5. push前的rebase，先pull下来develop，再rebase到develop，进行push
+> 
+> 6. 在gitlab上进行Merge Requests,将分支上的修改合并到develop中
+> 
+> 7. 审核者进行code review后进行代码合并
+> 
+
 ##### 创建git-flow仓库
 
 示例图（Sourcetree - 快捷键：option+command+F）：
@@ -147,13 +169,8 @@
 
 > 创建新的功能分支，如果目前有正在进行的功能分支，需要切换到develop中，否则会影响当前的功能分支进度。
 
-- commit:本地提交，无限制
+##### 示例及注意事项：
   
-- pull:在需要push之前，切换到develop中进行pull操作
-  
-- push:切换到需要push的分支，push前先rebase到develop，再进行push
-  
-
 ###### 例1: 检出分支
 
 ![git push 1jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BC%80%E5%8F%91%E8%A7%84%E8%8C%83/picture/git_push_1.jpeg)
