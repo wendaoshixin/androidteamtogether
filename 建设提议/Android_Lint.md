@@ -1,8 +1,20 @@
-P3C代码扫描
+[TOC]
 
-p3c是阿里巴巴提供的Java代码检测规范，并且提供了Android Studio插件供我们使用，除了可以进行扫描检查之外，还有实时代码规范提示功能。
+## **前言**
 
-### 插件安装
+为了更好的执行开发规范，提升审查效率，专业线全体小伙伴都将采用自动化脚本对代码进行扫描。
+
+考虑时间和扫描成本，经过专业线集体商议，采用**每次提交(P3C扫描)+每个迭代(Lint扫描)**的方案。
+
+- **每次代码提交**：每位小伙伴,代码git提交前，必须使用P3C进行静态扫描。若存在问题，修改好后，才能进行提交。
+
+- **每次版本迭代优化**：项目的Android负责人，必须对项目进行一次Lint检查，将存在问题分配给组内小伙伴，进行修复。
+
+## **1. 阿里P3C插件**
+
+> p3c是阿里巴巴提供的Java代码检测规范，并且提供了Android Studio插件供我们使用，除了可以进行扫描检查之外，还有实时代码规范提示功能。
+
+#### **1.1插件安装**
 
 通过Jetbrains官方仓库安装
 
@@ -16,11 +28,9 @@ p3c是阿里巴巴提供的Java代码检测规范，并且提供了Android Studi
 
 ---
 
-### 插件使用
+#### **1.2插件使用**
 
 目前插件实现了开发手册中的的53条规则，大部分基于PMD实现，其中有4条规则基于IDEA实现，并且基于IDEA [Inspection](https://www.jetbrains.com/help/idea/code-inspection.html)实现了实时检测功能。部分规则实现了Quick Fix功能，对于可以提供Quick Fix但没有提供的，我们会尽快实现，也欢迎有兴趣的同学加入进来一起努力。 目前插件检测有两种模式：实时检测、手动触发。
-
-###
 
 ##### 实时检测
 
@@ -54,7 +64,7 @@ Alt+Enter键可呼出Intention菜单，不同的规则会提示不同信息的Qu
 
 也可以关闭某条规则的实时检测功能或者修改提示级别。
 
-#### 代码扫描
+#### **1.3代码扫描**
 
 可以通过右键菜单、Toolbar按钮、快捷键三种方式手动触发代码检测。同时结果面板中可以对部分实现了QuickFix功能的规则进行快速修复。
 
@@ -86,7 +96,7 @@ Alt+Enter键可呼出Intention菜单，不同的规则会提示不同信息的Qu
 
 ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_13.png)
 
-## 代码提交时检测
+#### **1.4代码提交时检测**
 
 1. 在提交代码框勾选Alibaba Code Guidelines选项 
 
@@ -97,9 +107,9 @@ Alt+Enter键可呼出Intention菜单，不同的规则会提示不同信息的Qu
 ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_15.png) 
 
 
-## Android Lint
+## **2. Android Lint**
 
-##### 检索
+### **2.1检索**
 
 快捷键：Analyze —— Inspect Code
 
@@ -146,7 +156,7 @@ Ignore
 
 如上图所示，系统会提示所导致的错误规则，包括未配置的国际化语言
 
-##### 配置
+### **2.2配置**
 
 对于执行 Lint 操作的相关配置，是定义在 gradle 文件的 lintOptions 中，可定义的选项及其默认值
 
@@ -217,29 +227,31 @@ issue 标签中使用 **id 指定一个规则**，severity="ignore" 则表明禁
 另外开发者也可以使用 @SuppressLint(issue id) 标注针对某些代码忽略某些 Lint 检查，这个标注既可以加到成员变量之前，也可以加到方法声明和类声明之前，分别针对不同范围进行屏蔽。
 
 
-**PMD代码静态检查**
 
-##### 安装：
+## **3. PMD代码静态检查（可选）**
+
+因P3C是基于PMD基础上开发的java规范插件，因此不考虑自定义PMD的扫描规则，若是感兴趣，可以自行研究。
+
+### **3.1安装**：
 
 1. 自动安装：file --> settings --> plugins  搜索  pmd
-  
+
 
 ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_1.png)
 
 2. 下载进行安装：
-  
 
 [PMDPlugin - Plugins | JetBrains](https://plugins.jetbrains.com/plugin/1137-pmdplugin)
 
-##### IDE 插件直接使用：
+### **3.2IDE 插件直接使用**：
 
 1. pmd支持自定义规则集，配置规则：
-  
+
 
 ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_2.png)
 
 2. 用户可以选择在单个或者多个文件或文件夹上运行PMD：
-  
+
 
 -  选中 文件或文件夹 --> 右击 --> Run PDM --> 选择规则集
   
@@ -273,18 +285,18 @@ issue 标签中使用 **id 指定一个规则**，severity="ignore" 则表明禁
   
 
 3. 另外一种执行方式：Tools -> PMD -> PreDefined
-  
+
   ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_4.png)
-  
+
 4. 开始pmd检查，并显示检查的结果。
-  
+
 
 ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_5.png)
 
-##### gradle插件方式使用：
+### **3.3 gradle插件方式使用**：
 
 1. gradle插件
-  
+
   ```
   apply plugin: 'pmd'
   
@@ -317,23 +329,23 @@ issue 标签中使用 **id 指定一个规则**，severity="ignore" 则表明禁
       }
   }
   ```
-  
+
 2. 模块引用插件
-  
+
   ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_6.png)
-  
+
 3. 执行检测，点击pmd任务或者执行命令行执行
-  
+
   ```undefined
   ./gradlew check
   ```
-  
+
   ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_7.png)
-  
+
 4. 查看检查结果
-    
+   
     ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_8.png)
     
 5. 结果为html或者xml格式，自行配置
-      
+   
     ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_9.png)
