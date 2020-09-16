@@ -6,6 +6,10 @@
 
 常规会议：
 
+- [**Android小组会议(2020-09-11)**](http://192.168.11.214:8087/android-team/androidteamtogether/blob/master/%E6%AF%8F%E5%91%A8%E5%B8%B8%E8%A7%84%E4%BC%9A%E8%AE%AE/%E6%AF%8F%E5%91%A8%E5%B8%B8%E8%A7%84%E4%BC%9A%E8%AE%AE_20200911.md)
+
+- [**Android小组会议(2020-09-04)**](http://192.168.11.214:8087/android-team/androidteamtogether/blob/master/%E6%AF%8F%E5%91%A8%E5%B8%B8%E8%A7%84%E4%BC%9A%E8%AE%AE/%E6%AF%8F%E5%91%A8%E5%B8%B8%E8%A7%84%E4%BC%9A%E8%AE%AE_20200904.md)
+
 - [**Android小组会议(2020-08-28)**](http://192.168.11.214:8087/android-team/androidteamtogether/blob/master/%E6%AF%8F%E5%91%A8%E5%B8%B8%E8%A7%84%E4%BC%9A%E8%AE%AE/%E6%AF%8F%E5%91%A8%E5%B8%B8%E8%A7%84%E4%BC%9A%E8%AE%AE_20200828.md)
 
 - [**Android小组会议(2020-08-24)**](http://192.168.11.214:8087/android-team/androidteamtogether/blob/master/%E6%AF%8F%E5%91%A8%E5%B8%B8%E8%A7%84%E4%BC%9A%E8%AE%AE/%E6%AF%8F%E5%91%A8%E5%B8%B8%E8%A7%84%E4%BC%9A%E8%AE%AE_20200824.md)
