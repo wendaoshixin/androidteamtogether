@@ -4,7 +4,7 @@
 - 按照产生原因、解决方式来记录问题。
 
 ## **UI相关问题**
-### **RecyclerView notifyItemInserted(0)在RecycleView数据未满一屏的时候，会有插入动画效果，但当RecycleView数据超过一屏时，就不再有Insert的动画效果了。**
+### **1.RecyclerView notifyItemInserted(0)在RecycleView数据未满一屏的时候，会有插入动画效果，但当RecycleView数据超过一屏时，就不再有Insert的动画效果了。**
 
 **产生原因**：
 >执行notifyItemInserted(0)方法后，旧的第位置0变为了位置1（在屏幕上可见），而新添加的位置0则变为不可见，需要手动向下滑动才可见。
