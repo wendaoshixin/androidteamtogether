@@ -1,4 +1,3 @@
-
 ## **前言**
 
 为了更好的执行开发规范，提升审查效率，专业线全体小伙伴都将采用自动化脚本对代码进行扫描。
@@ -19,11 +18,11 @@
 
 1. 打开 Settings >> Plugins >> Browse repositories...
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_1.png)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/p3c_1.png)
 
 2. 在搜索框输入alibaba即可看到Alibaba Java Code Guidelines插件，点击Install进行安装，然后重启IDE生效
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_2.png)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/p3c_2.png)
 
 ---
 
@@ -39,15 +38,15 @@
 
 检测结果高亮提示，并且鼠标放上去会弹出提示信息。
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_3.png)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/p3c_3.png)
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_4.png)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/p3c_4.png)
 
 ##### 智能QuickFix功能
 
 Alt+Enter键可呼出Intention菜单，不同的规则会提示不同信息的Quick Fix按钮
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_5.png)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/p3c_5.png)
 
 ##### 关闭实时检测
 
@@ -55,11 +54,11 @@ Alt+Enter键可呼出Intention菜单，不同的规则会提示不同信息的Qu
 
 1. 通过右键快速关闭（打开）所有规则的实时检测功能
 
- ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_6.png) 
+ ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/p3c_6.png) 
 
 2. 通过Settings >> Editor >> Inspections 进行手动设置
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_7.png)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/p3c_7.png)
 
 也可以关闭某条规则的实时检测功能或者修改提示级别。
 
@@ -71,39 +70,39 @@ Alt+Enter键可呼出Intention菜单，不同的规则会提示不同信息的Qu
 
 在当前编辑的文件中点击右键，可以在弹出的菜单中触发对该文件的检测。
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_8.png)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/p3c_8.png)
 
 在左侧的Project目录树种点击右键，可以触发对整个工程或者选择的某个目录、文件进行检测。
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_9.png)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/p3c_9.png)
 
 ##### 扫描结果
 
 检测结果直接使用IDEA Run Inspection By Name功能的结果界面，插件的检测结果分级为Blocker、Critical、Major。默认按等级分组，方便统计每个级别错误的数量。
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_10.png)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/p3c_10.png)
 
 默认情况我们在结果面板需要双击具体违规项才能打开对应的源文件，开启Autoscroll To Source选项，单击面板中的文件名、或者是具体的违规项的时候IDEA会自动打开对应的源文件。
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_11.png)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/p3c_11.png)
 
 ##### QuickFix
 
 对于实现Quick Fix的规则，在结果面板中可以直接一键修复 `注意：IDEA14、15可以通过左下角的灯泡进行一键修复操作。`
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_12.png)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/p3c_12.png)
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_13.png)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/p3c_13.png)
 
 #### **1.4代码提交时检测**
 
 1. 在提交代码框勾选Alibaba Code Guidelines选项 
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_14.png) 
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/p3c_14.png) 
 
 2. 如果有违反手册的地方会提示是否继续提交，选择取消后会自动对修改的代码进行扫描 
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/p3c_15.png) 
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/p3c_15.png) 
 
 
 ## **2. Android Lint**
@@ -120,11 +119,11 @@ Alt+Enter键可呼出Intention菜单，不同的规则会提示不同信息的Qu
 
 * custom scope:自定义范围
 
-![lint_1.jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/lint_1.jpeg)
+![lint_1.jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/lint_1.jpeg)
 
 检查完毕后会弹出 Inspection 的控制台，并在其中列出详细的检查结果：
 
-![lint_2.jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/lint_2.jpeg)
+![lint_2.jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/lint_2.jpeg)
 
 如上图所展示的，Android Lint 对检查的结果进行了分类，同一个规则（issue）下的问题会聚合，其中针对 Android 的规则类别会在分类前说明是 Android 相关的，主要是六类：
 
@@ -151,7 +150,7 @@ Ignore
 
 在结果列表中点击一个条目，可以看到详细的源文件名和位置，以及命中的错误规则（issue）、解决方案或者屏蔽提示
 
-![lint_3.jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/lint_3.jpeg)
+![lint_3.jpeg](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/lint_3.jpeg)
 
 如上图所示，系统会提示所导致的错误规则，包括未配置的国际化语言
 
@@ -219,7 +218,7 @@ android {
 
 **lint.xml** 这个文件则是配置 Lint 需要禁用哪些规则（issue），以及自定义规则的严重程度（severity），lint.xml 文件是通过 **issue 标签**指定对一个规则的控制，在**项目根目录**中建立一个 lint.xml 文件后 **Android Lint 会自动识别该文件**，在执行检查时按照 lint.xml 的内容进行检查。如上面提到的那样，开发者也可以通过 lintOptions 中的 lintConfig 选项来指定配置文件。一个 lint.xml 示例如下：
 
-![line_3.webp](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/line_3.webp)
+![line_3.webp](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/line_3.webp)
 
 issue 标签中使用 **id 指定一个规则**，severity="ignore" 则表明禁用这个规则。需要注意的是，某些规则可以通过 ignore 标签指定仅对某些属性禁用，例如上面的 Deprecated，表示检查是否有使用不推荐的属性和方法，而在 issue 标签中包裹一个 ignore 标签，在 ignore 标签的 regexp 属性中使用正则表达式指定了 singleLine，则表明对 singleLine 这个属性屏蔽检查。
 
@@ -247,14 +246,14 @@ issue 标签中使用 **id 指定一个规则**，severity="ignore" 则表明禁
 1. pmd支持自定义规则集，配置规则：
 
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_2.png)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/pmd_2.png)
 
 2. 用户可以选择在单个或者多个文件或文件夹上运行PMD：
 
 
 -  选中 文件或文件夹 --> 右击 --> Run PDM --> 选择规则集
   
-  ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_3.png)
+  ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/pmd_3.png)
   
 - 常用的规则定义
   
@@ -285,12 +284,12 @@ issue 标签中使用 **id 指定一个规则**，severity="ignore" 则表明禁
 
 3. 另外一种执行方式：Tools -> PMD -> PreDefined
 
-  ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_4.png)
+  ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/pmd_4.png)
 
 4. 开始pmd检查，并显示检查的结果。
 
 
-![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_5.png)
+![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/pmd_5.png)
 
 ### **3.3 gradle插件方式使用**：
 
@@ -331,7 +330,7 @@ issue 标签中使用 **id 指定一个规则**，severity="ignore" 则表明禁
 
 2. 模块引用插件
 
-  ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_6.png)
+  ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/pmd_6.png)
 
 3. 执行检测，点击pmd任务或者执行命令行执行
 
@@ -339,12 +338,12 @@ issue 标签中使用 **id 指定一个规则**，severity="ignore" 则表明禁
   ./gradlew check
   ```
 
-  ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_7.png)
+  ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/pmd_7.png)
 
 4. 查看检查结果
    
-    ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_8.png)
+    ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/pmd_8.png)
     
 5. 结果为html或者xml格式，自行配置
    
-    ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/picture/pmd_9.png)
+    ![](http://192.168.11.214:8087/android-team/androidteamtogether/raw/master/落地方案/文档/picture/pmd_9.png)
