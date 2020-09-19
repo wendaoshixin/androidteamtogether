@@ -45,6 +45,8 @@
 
 - [看看我](http://192.168.11.214:8087/android-team/androidteamtogether/blob/master/%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE/Android%E5%B9%B3%E5%8F%B0%E5%BB%BA%E8%AE%BE%E6%8F%90%E8%AE%AE.md)
 
+Bug汇总：
+- [收藏我](http://192.168.11.214:8087/android-team/androidteamtogether/blob/master/%E9%81%87%E5%88%B0%E7%9A%84bug%E6%B1%87%E6%80%BB/Bug%E6%B1%87%E6%80%BB.md)
 
 GitLab的使用事项：
 
