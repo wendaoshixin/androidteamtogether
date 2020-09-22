@@ -51,3 +51,42 @@
     }
 ```
 
+## **ANR相关问题**
+
+### **1.Android 8.0启动前台服务产生ANR**
+
+**产生原因**：
+>因为在Application里面启动了一个音乐播放器的服务，调用context.startForegroundService(intent)，但是这个地方会直接卡住，产生ANR
+>
+>
+
+```kotlin
+        mConnection = MusicPlayerServiceConnection()
+        mConnection?.let {
+            val intent = Intent(context, MusicPlayerService::class.java)
+            context.bindService(
+                intent, it,
+                Context.BIND_AUTO_CREATE
+            )
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                //启动前台服务
+                context.startForegroundService(intent)
+            } else {
+                context.startService(intent)
+            }
+
+            callBack.onSuccess()
+        }
+```
+**解决方式**：
+
+8.0 以后不希望后台应用运行后台服务，一旦通过startForegroundService() 启动前台服务，必须在service 中有startForeground() 配套，不然会出现ANR 或者crash
+可以在startForeground() 配置notification 即可
+
+
+
+
+
+
+
+
