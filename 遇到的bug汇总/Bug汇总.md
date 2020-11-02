@@ -83,6 +83,8 @@
 8.0 以后不希望后台应用运行后台服务，一旦通过startForegroundService() 启动前台服务，必须在service 中有startForeground() 配套，不然会出现ANR 或者crash
 可以在startForeground() 配置notification 即可
 
+9 对话框或item布局中使用ConstraintLayout后，布局经常显示不出来，可换成其他布局Framelayout等等。
+
 
 
 
