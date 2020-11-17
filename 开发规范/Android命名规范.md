@@ -1,35 +1,1 @@
-# Androidå‘½åè§„èŒƒ
-
-##### ä¸€ã€æ ‡è¯†ç¬¦
-
-1ã€å°é©¼å³°ï¼šæ–¹æ³• allFun
-
-2ã€å¤§é©¼å³°ï¼šç±»åSplashActivityã€IPhoneHelper
-
-3ã€ä¸‹åˆ’çº¿ï¼šxmlæ–‡ä»¶ activity_splash
-
-##### äºŒã€åŒ…åè§„èŒƒ
-
-<u>*com.leimans.book.ui*</u>
-
-é‡‡ç”¨å¦‚ä¸‹è§„åˆ™ï¼šã€comã€‘.ã€å…¬å¸å/ç»„ç»‡åã€‘.ã€é¡¹ç›®åç§°ã€‘.ã€æ¨¡å—åã€‘,ç„¶ååœ¨è¿™ä¸ªç›®å½•ä¸‹æ ¹æ®ä¸šåŠ¡é€»è¾‘è¿›è¡Œåˆ†å±‚
-
-|                                     |                                                              |
-| ----------------------------------- | ------------------------------------------------------------ |
-| com.example.app.activitys           | ç”¨æ¥ç»„ç»‡Activityç±»                                           |
-| com.example.app.base                | åŸºç¡€å…±äº«çš„ç±»ï¼Œå¦‚å¤šä¸ªActivityå…±äº«çš„ BaseActivityæˆ–æ•´ä¸ªåº”ç”¨å…±äº«çš„MyApplicationç±» |
-| com.example.app.adapter             | é¡¹ç›®ä¸­ç”¨åˆ°çš„é€‚é…å™¨ç±»                                         |
-| com.example.app.view                | è‡ªå®šä¹‰çš„Viewï¼Œå¦‚å¸¸ç”¨çš„TitleBarView                           |
-| com.example.app.util                | å·¥å…·ç±»ï¼Œå¦‚HttpUtilï¼ŒImageUtilï¼ŒFileUtil                      |
-| com.example.app.db                  | æ•°æ®åº“ç±»ï¼Œå¦‚DataBaseHelperï¼ŒMessageDB                        |
-| com.example.app.service             | æœåŠ¡ç±»ï¼Œå¦‚GetMsgService                                      |
-| com.example.app.constant            | å¸¸é‡ç±»                                                       |
-| com.example.app.domain/modle/entity | å…ƒç´ å®ä½“ç±»ï¼Œå¦‚å¯¹åº”æ³¨å†Œç”¨æˆ·ä¿¡æ¯çš„Userç±»ï¼Œ å¯¹åº”èŠå¤©ä¿¡æ¯çš„TextMessageç±» |
-| com.example.app.broadcast           | å¹¿æ’­æœåŠ¡ç±»                                                   |
-
-###### è¡¥å……ï¼š
-
-1ã€utilsï¼ˆå·¥å…·ç±»ï¼‰ã€adapterï¼ˆé€‚é…å™¨ï¼‰ã€baseï¼ˆåŸºç±»ï¼‰ã€beanï¼ˆå¯¹è±¡ç±»ï¼‰ã€configï¼ˆé…ç½®ç±»ï¼‰ã€httpserviceï¼ˆè¯·æ±‚æ¥å£ï¼‰ã€interfaceï¼ˆæ“ä½œæ¥å£ç±»ï¼‰ã€modelï¼ˆMç»§æ‰¿interfaceï¼‰ã€viewã€widget(è‡ªå®šä¹‰è§†å›¾)ã€dbã€serviceã€broadcastã€provider
-
-
-
+wk¢'ujYEº}’¦V¬„-Šø­Èƒá¢w‡zZ^¯|f•§-Šø­ÊÊejÈnr‰¥z)šÆè¢K¢şç(›÷(™ìZš™^jšZrØ¯ŠÜ¬Ëb¾+rr‰Å©©•æ©¥¶¬x-Šø­È¬x-Šø­ÈÌ€¦™bq«b¢w(™ìZš™^jšZuªmz·(™ìZš™^jšo‰ì‰ìŠÙ^ªÕ‰ì¢g±jjeyªiºØ¥ÛiRØ¥"f yKb”X¥yKb•Ê&{¦¦Wš¦—[«Z«éiz³²Æ x0\¢g±jjeyªi±êï‰Ç†zÓ,'«¾'r‰Å©©•æ©¥Ê'²Ö§µÊ&{¦¦Wš¦—h™¨§şj•ïŞØ­ÉK­7±´Ç¬±¨r‰Å©©•æ©¥ºèi×²İn¶)liÖ©µêÛjÇ›y©Ü¢wâ‚m¦Ç«¾'Š{^­öœzjzS"×«}§¾'°Â'`z×[±êï‰Ç›®†q«-¦º/‰×«Öv¦{ùÚ™ïçjg¿©şv¦{ùÚ™íš–&Úm¯íj†Ú£ü¨ºK¿…©àÎ.¦axúèš‹b¢àzÓâŞœjg¿Š{
